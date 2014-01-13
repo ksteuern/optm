@@ -49,22 +49,22 @@ public class BettingScheduleView {
 		TableViewerColumn tableViewerColumn = new TableViewerColumn(tableViewer, SWT.NONE);
 		TableColumn tblclmnNewColumn = tableViewerColumn.getColumn();
 		tcl_composite.setColumnData(tblclmnNewColumn, new ColumnPixelData(150, true, true));
-		tblclmnNewColumn.setText(Messages.BettingScheduleView_8);
+		tblclmnNewColumn.setText(Messages.BettingScheduleView_1);
 
 		TableViewerColumn tableViewerColumn_1 = new TableViewerColumn(tableViewer, SWT.NONE);
 		TableColumn tblclmnNewColumn_1 = tableViewerColumn_1.getColumn();
 		tcl_composite.setColumnData(tblclmnNewColumn_1, new ColumnPixelData(150, true, true));
-		tblclmnNewColumn_1.setText(Messages.BettingScheduleView_9);
+		tblclmnNewColumn_1.setText(Messages.BettingScheduleView_2);
 
 		TableViewerColumn tableViewerColumn_2 = new TableViewerColumn(tableViewer, SWT.NONE);
 		TableColumn tblclmnNewColumn_2 = tableViewerColumn_2.getColumn();
 		tcl_composite.setColumnData(tblclmnNewColumn_2, new ColumnPixelData(150, true, true));
-		tblclmnNewColumn_2.setText(Messages.BettingScheduleView_10);
+		tblclmnNewColumn_2.setText(Messages.BettingScheduleView_3);
 
 		TableViewerColumn tableViewerColumn_3 = new TableViewerColumn(tableViewer, SWT.NONE);
 		TableColumn tblclmnNewColumn_3 = tableViewerColumn_3.getColumn();
 		tcl_composite.setColumnData(tblclmnNewColumn_3, new ColumnPixelData(150, true, true));
-		tblclmnNewColumn_3.setText(Messages.BettingScheduleView_11);
+		tblclmnNewColumn_3.setText(Messages.BettingScheduleView_4);
 
 		for (String[] level : schedule) {
 			TableItem tableItem = new TableItem(table, SWT.NONE);
