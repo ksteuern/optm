@@ -10,11 +10,12 @@
     </children>
     <mainMenu xmi:id="_X5W-IHrCEeOqndFvd5zY2Q" elementId="optm.menu.0">
       <children xsi:type="menu:Menu" xmi:id="_DPHuQHrDEeOqndFvd5zY2Q" elementId="optm.menu.1" label="File">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_D-ptwHrDEeOqndFvd5zY2Q" elementId="optm.handledmenuitem.0" label="Exit"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_D-ptwHrDEeOqndFvd5zY2Q" elementId="optm.handledmenuitem.0" label="Exit" command="_4c-aUHrCEeOqndFvd5zY2Q"/>
       </children>
     </mainMenu>
   </children>
-  <commands xmi:id="_4c-aUHrCEeOqndFvd5zY2Q" elementId="optm.command.0" commandName="exit"/>
+  <handlers xmi:id="_a2hpMHyLEeONJtDp24fk8A" elementId="net.optm.handlers.exit" contributionURI="bundleclass://optm/net.optm.handler.ExitHandler" command="_4c-aUHrCEeOqndFvd5zY2Q"/>
+  <commands xmi:id="_4c-aUHrCEeOqndFvd5zY2Q" elementId="org.eclipse.ui.file.exit" commandName="exit"/>
   <addons xmi:id="_kD4HknowEeOLc8noYQpn9g" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_kD4Hk3owEeOLc8noYQpn9g" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_kD4HlHowEeOLc8noYQpn9g" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
