@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_kD4HkHowEeOLc8noYQpn9g" elementId="org.eclipse.e4.ide.application">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_kD4HkXowEeOLc8noYQpn9g" label="Open Poker Tournament Manager" width="800" height="600">
+  <children xsi:type="basic:Window" xmi:id="_KLi0YH1hEeOuH68gE5gN4Q" elementId="optm.window.0" label="%window.label.1">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_2Ia1oHoxEeOLc8noYQpn9g" elementId="optm.perspectivestack.0">
-      <children xsi:type="advanced:Perspective" xmi:id="_58ztQHoxEeOLc8noYQpn9g" elementId="optm.perspective.tournament" label="Tournament">
-        <children xsi:type="basic:PartStack" xmi:id="_Ghze4HoyEeOLc8noYQpn9g" elementId="optm.partstack.0">
-          <children xsi:type="basic:Part" xmi:id="_Lzok4HoyEeOLc8noYQpn9g" elementId="optm.part.0" contributionURI="bundleclass://optm/net.optm.view.BettingScheduleView" label="Betting Schedule"/>
+      <children xsi:type="advanced:Perspective" xmi:id="_58ztQHoxEeOLc8noYQpn9g" elementId="optm.perspective.tournament" label="%perspective.label.1">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_X52-gH1hEeOuH68gE5gN4Q" elementId="optm.partsashcontainer.0" containerData="10000" horizontal="true">
+          <children xsi:type="basic:PartStack" xmi:id="_bbxmEH1hEeOuH68gE5gN4Q" elementId="optm.partstack.1" containerData="2000">
+            <children xsi:type="basic:Part" xmi:id="_dNe0QH1hEeOuH68gE5gN4Q" elementId="optm.part.1" contributionURI="bundleclass://optm/net.optm.view.ComponentsView" label="%part.label.2"/>
+          </children>
+          <children xsi:type="basic:PartStack" xmi:id="_Ghze4HoyEeOLc8noYQpn9g" elementId="optm.partstack.0" containerData="8000">
+            <children xsi:type="basic:Part" xmi:id="_Lzok4HoyEeOLc8noYQpn9g" elementId="optm.part.0" contributionURI="bundleclass://optm/net.optm.view.BettingScheduleView" label="%part.label.1"/>
+          </children>
         </children>
       </children>
     </children>
-    <mainMenu xmi:id="_X5W-IHrCEeOqndFvd5zY2Q" elementId="optm.menu.0">
-      <children xsi:type="menu:Menu" xmi:id="_DPHuQHrDEeOqndFvd5zY2Q" elementId="optm.menu.1" label="File">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_D-ptwHrDEeOqndFvd5zY2Q" elementId="optm.handledmenuitem.0" label="Exit" command="_4c-aUHrCEeOqndFvd5zY2Q"/>
+    <mainMenu xmi:id="_N9xI0H1hEeOuH68gE5gN4Q" elementId="optm.menu.2">
+      <children xsi:type="menu:Menu" xmi:id="_DPHuQHrDEeOqndFvd5zY2Q" elementId="optm.menu.1" label="%menu.label.1">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_D-ptwHrDEeOqndFvd5zY2Q" elementId="optm.handledmenuitem.0" label="%handledmenuitem.label.1" command="_4c-aUHrCEeOqndFvd5zY2Q"/>
       </children>
     </mainMenu>
   </children>
   <handlers xmi:id="_a2hpMHyLEeONJtDp24fk8A" elementId="net.optm.handlers.exit" contributionURI="bundleclass://optm/net.optm.handler.ExitHandler" command="_4c-aUHrCEeOqndFvd5zY2Q"/>
-  <commands xmi:id="_4c-aUHrCEeOqndFvd5zY2Q" elementId="org.eclipse.ui.file.exit" commandName="exit"/>
+  <commands xmi:id="_4c-aUHrCEeOqndFvd5zY2Q" elementId="org.eclipse.ui.file.exit" commandName="%command.commandname.1"/>
   <addons xmi:id="_kD4HknowEeOLc8noYQpn9g" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_kD4Hk3owEeOLc8noYQpn9g" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_kD4HlHowEeOLc8noYQpn9g" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
