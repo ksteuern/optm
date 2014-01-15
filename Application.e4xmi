@@ -14,16 +14,16 @@
       </children>
     </children>
     <mainMenu xmi:id="_N9xI0H1hEeOuH68gE5gN4Q" elementId="optm.menu.2">
-      <children xsi:type="menu:Menu" xmi:id="_DPHuQHrDEeOqndFvd5zY2Q" elementId="optm.menu.file" label="%menu.label.1">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_D-ptwHrDEeOqndFvd5zY2Q" elementId="optm.menu.file.exit" label="%handledmenuitem.label.1" command="_4c-aUHrCEeOqndFvd5zY2Q"/>
+      <children xsi:type="menu:Menu" xmi:id="_DPHuQHrDEeOqndFvd5zY2Q" elementId="optm.menu.file" label="%optm.menu.file_label">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_D-ptwHrDEeOqndFvd5zY2Q" elementId="optm.menu.file.exit" label="%optm.menu.file.exit_label" command="_4c-aUHrCEeOqndFvd5zY2Q"/>
       </children>
-      <children xsi:type="menu:Menu" xmi:id="_O0EJgH4jEeOUM9TQ0fFStw" elementId="optm.menu.help" label="%menu.label.2">
-        <children xsi:type="menu:DirectMenuItem" xmi:id="_S7rfIH4jEeOUM9TQ0fFStw" elementId="optm.menu.help.about" label="%directmenuitem.label.1"/>
+      <children xsi:type="menu:Menu" xmi:id="_O0EJgH4jEeOUM9TQ0fFStw" elementId="optm.menu.help" label="%optm.menu.help_label">
+        <children xsi:type="menu:DirectMenuItem" xmi:id="_S7rfIH4jEeOUM9TQ0fFStw" elementId="optm.menu.help.about" label="%optm.menu.help.about_label"/>
       </children>
     </mainMenu>
   </children>
   <handlers xmi:id="_a2hpMHyLEeONJtDp24fk8A" elementId="net.optm.handlers.exit" contributionURI="bundleclass://optm/net.optm.handler.ExitHandler" command="_4c-aUHrCEeOqndFvd5zY2Q"/>
-  <commands xmi:id="_4c-aUHrCEeOqndFvd5zY2Q" elementId="org.eclipse.ui.file.exit" commandName="%command.commandname.1"/>
+  <commands xmi:id="_4c-aUHrCEeOqndFvd5zY2Q" elementId="org.eclipse.ui.file.exit" commandName="%optm.command.exit_commandname"/>
   <addons xmi:id="_kD4HknowEeOLc8noYQpn9g" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_kD4Hk3owEeOLc8noYQpn9g" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_kD4HlHowEeOLc8noYQpn9g" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
