@@ -1,3 +1,19 @@
+/*
+ * (C) Copyright 2014 Kai Steuernagel.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
 package net.optm.view;
 
 import javax.annotation.PostConstruct;
@@ -25,98 +41,103 @@ import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.swt.widgets.Text;
 
 public class BettingScheduleView {
-	private final String[][] schedule = { { "1", "5", "10", "20" }, //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-			{ "2", "10", "20", "20" } }; //$NON-NLS-1$ //$NON-NLS-2$
-	private Table table;
 
-	@Inject
-	public BettingScheduleView() {
-		// TODO Your code here
-	}
+    private final String[][] schedule = { {"1", "5", "10", "20"}, //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+            {"2", "10", "20", "20"}}; //$NON-NLS-1$ //$NON-NLS-2$
 
-	@PostConstruct
-	public void postConstruct(final Composite parent) {
+    private Table table;
 
-		Composite composite = new Composite(parent, SWT.NONE);
-		TableColumnLayout tcl_composite = new TableColumnLayout();
-		composite.setLayout(tcl_composite);
+    @Inject
+    public BettingScheduleView() {
+        // TODO Your code here
+    }
 
-		TableViewer tableViewer = new TableViewer(composite, SWT.BORDER | SWT.FULL_SELECTION);
-		table = tableViewer.getTable();
-		table.setHeaderVisible(true);
-		table.setLinesVisible(true);
+    @PostConstruct
+    public void postConstruct(final Composite parent) {
 
-		TableViewerColumn tableViewerColumn = new TableViewerColumn(tableViewer, SWT.NONE);
-		TableColumn tblclmnNewColumn = tableViewerColumn.getColumn();
-		tcl_composite.setColumnData(tblclmnNewColumn, new ColumnPixelData(150, true, true));
-		tblclmnNewColumn.setText(Messages.BettingScheduleView_1);
+        Composite composite = new Composite(parent, SWT.NONE);
+        TableColumnLayout tcl_composite = new TableColumnLayout();
+        composite.setLayout(tcl_composite);
 
-		TableViewerColumn tableViewerColumn_1 = new TableViewerColumn(tableViewer, SWT.NONE);
-		TableColumn tblclmnNewColumn_1 = tableViewerColumn_1.getColumn();
-		tcl_composite.setColumnData(tblclmnNewColumn_1, new ColumnPixelData(150, true, true));
-		tblclmnNewColumn_1.setText(Messages.BettingScheduleView_2);
+        TableViewer tableViewer = new TableViewer(composite, SWT.BORDER | SWT.FULL_SELECTION);
+        table = tableViewer.getTable();
+        table.setHeaderVisible(true);
+        table.setLinesVisible(true);
 
-		TableViewerColumn tableViewerColumn_2 = new TableViewerColumn(tableViewer, SWT.NONE);
-		TableColumn tblclmnNewColumn_2 = tableViewerColumn_2.getColumn();
-		tcl_composite.setColumnData(tblclmnNewColumn_2, new ColumnPixelData(150, true, true));
-		tblclmnNewColumn_2.setText(Messages.BettingScheduleView_3);
+        TableViewerColumn tableViewerColumn = new TableViewerColumn(tableViewer, SWT.NONE);
+        TableColumn tblclmnNewColumn = tableViewerColumn.getColumn();
+        tcl_composite.setColumnData(tblclmnNewColumn, new ColumnPixelData(150, true, true));
+        tblclmnNewColumn.setText(Messages.BettingScheduleView_1);
 
-		TableViewerColumn tableViewerColumn_3 = new TableViewerColumn(tableViewer, SWT.NONE);
-		TableColumn tblclmnNewColumn_3 = tableViewerColumn_3.getColumn();
-		tcl_composite.setColumnData(tblclmnNewColumn_3, new ColumnPixelData(150, true, true));
-		tblclmnNewColumn_3.setText(Messages.BettingScheduleView_4);
+        TableViewerColumn tableViewerColumn_1 = new TableViewerColumn(tableViewer, SWT.NONE);
+        TableColumn tblclmnNewColumn_1 = tableViewerColumn_1.getColumn();
+        tcl_composite.setColumnData(tblclmnNewColumn_1, new ColumnPixelData(150, true, true));
+        tblclmnNewColumn_1.setText(Messages.BettingScheduleView_2);
 
-		for (String[] level : schedule) {
-			TableItem tableItem = new TableItem(table, SWT.NONE);
-			tableItem.setText(level);
-		}
-		final TableEditor editor = new TableEditor(table);
-		editor.horizontalAlignment = SWT.LEFT;
-	    editor.grabHorizontal = true;
-	    editor.minimumWidth = 50;
-	    // editing the second column
-	    final int EDITABLECOLUMN = 1;
+        TableViewerColumn tableViewerColumn_2 = new TableViewerColumn(tableViewer, SWT.NONE);
+        TableColumn tblclmnNewColumn_2 = tableViewerColumn_2.getColumn();
+        tcl_composite.setColumnData(tblclmnNewColumn_2, new ColumnPixelData(150, true, true));
+        tblclmnNewColumn_2.setText(Messages.BettingScheduleView_3);
 
-	    table.addSelectionListener(new SelectionAdapter() {
-	        @Override
-	        public void widgetSelected(final SelectionEvent e) {
-	            // Clean up any previous editor control
-	            Control oldEditor = editor.getEditor();
-	            if (oldEditor != null) {
+        TableViewerColumn tableViewerColumn_3 = new TableViewerColumn(tableViewer, SWT.NONE);
+        TableColumn tblclmnNewColumn_3 = tableViewerColumn_3.getColumn();
+        tcl_composite.setColumnData(tblclmnNewColumn_3, new ColumnPixelData(150, true, true));
+        tblclmnNewColumn_3.setText(Messages.BettingScheduleView_4);
+
+        for (String[] level : schedule) {
+            TableItem tableItem = new TableItem(table, SWT.NONE);
+            tableItem.setText(level);
+        }
+        final TableEditor editor = new TableEditor(table);
+        editor.horizontalAlignment = SWT.LEFT;
+        editor.grabHorizontal = true;
+        editor.minimumWidth = 50;
+        // editing the second column
+        final int EDITABLECOLUMN = 1;
+
+        table.addSelectionListener(new SelectionAdapter() {
+
+            @Override
+            public void widgetSelected(final SelectionEvent e) {
+                // Clean up any previous editor control
+                Control oldEditor = editor.getEditor();
+                if (oldEditor != null) {
                     oldEditor.dispose();
                 }
 
-	            // Identify the selected row
-	            TableItem item = (TableItem)e.item;
-	            if (item == null) {
+                // Identify the selected row
+                TableItem item = (TableItem) e.item;
+                if (item == null) {
                     return;
                 }
 
-	            // The control that will be the editor must be a child of the Table
-	            Text newEditor = new Text(table, SWT.NONE);
-	            newEditor.setText(item.getText(EDITABLECOLUMN));
-	            newEditor.addModifyListener(new ModifyListener() {
-	                @Override
-	                public void modifyText(final ModifyEvent me) {
-	                    Text text = (Text)editor.getEditor();
-	                    editor.getItem().setText(EDITABLECOLUMN, text.getText());
-	                }
-	            });
-	            newEditor.selectAll();
-	            newEditor.setFocus();
-	            editor.setEditor(newEditor, item, EDITABLECOLUMN);
-	        }
-	    });
-		// TODO Your code here
-	}
+                // The control that will be the editor must be a child of the
+                // Table
+                Text newEditor = new Text(table, SWT.NONE);
+                newEditor.setText(item.getText(EDITABLECOLUMN));
+                newEditor.addModifyListener(new ModifyListener() {
 
-	@Focus
-	public void onFocus() {
-		// TODO Your code here
-	}
+                    @Override
+                    public void modifyText(final ModifyEvent me) {
+                        Text text = (Text) editor.getEditor();
+                        editor.getItem().setText(EDITABLECOLUMN, text.getText());
+                    }
+                });
+                newEditor.selectAll();
+                newEditor.setFocus();
+                editor.setEditor(newEditor, item, EDITABLECOLUMN);
+            }
+        });
+        // TODO Your code here
+    }
 
-	@Persist
-	public void save() {
-		// TODO Your code here
-	}
+    @Focus
+    public void onFocus() {
+        // TODO Your code here
+    }
+
+    @Persist
+    public void save() {
+        // TODO Your code here
+    }
 }

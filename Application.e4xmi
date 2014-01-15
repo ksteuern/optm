@@ -5,7 +5,7 @@
       <children xsi:type="advanced:Perspective" xmi:id="_58ztQHoxEeOLc8noYQpn9g" elementId="optm.perspective.tournament" label="%perspective.label.1">
         <children xsi:type="basic:PartSashContainer" xmi:id="_X52-gH1hEeOuH68gE5gN4Q" elementId="optm.partsashcontainer.0" containerData="10000" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_bbxmEH1hEeOuH68gE5gN4Q" elementId="optm.partstack.1" containerData="2000">
-            <children xsi:type="basic:Part" xmi:id="_dNe0QH1hEeOuH68gE5gN4Q" elementId="optm.part.1" contributionURI="bundleclass://optm/net.optm.view.ComponentsView" label="%part.label.2"/>
+            <children xsi:type="basic:Part" xmi:id="_dNe0QH1hEeOuH68gE5gN4Q" elementId="optm.part.1" contributionURI="bundleclass://optm/net.optm.view.RepositoryView" label="%part.label.2"/>
           </children>
           <children xsi:type="basic:PartStack" xmi:id="_Ghze4HoyEeOLc8noYQpn9g" elementId="optm.partstack.0" containerData="8000">
             <children xsi:type="basic:Part" xmi:id="_Lzok4HoyEeOLc8noYQpn9g" elementId="optm.part.0" contributionURI="bundleclass://optm/net.optm.view.BettingScheduleView" label="%part.label.1"/>
