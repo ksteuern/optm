@@ -18,7 +18,7 @@ package net.optm.view;
 
 import java.net.URL;
 
-import net.optm.model.Component;
+import net.optm.model.RepositoryItem;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
@@ -32,15 +32,15 @@ public class ComponentsLabelProvider extends LabelProvider {
 
     @Override
     public String getText(final Object element) {
-        Component component = (Component) element;
+        RepositoryItem component = (RepositoryItem) element;
         String name = component.getName();
         return name;
     }
 
     @Override
     public Image getImage(final Object element) {
-        if (element instanceof Component) {
-            Component component = (Component) element;
+        if (element instanceof RepositoryItem) {
+            RepositoryItem component = (RepositoryItem) element;
             if (component.getImageFileName() != null) {
                 return getImageFromPlugin(component.getImageFileName());
             }

@@ -21,7 +21,7 @@ import javax.annotation.PreDestroy;
 
 import net.optm.model.BettingSchedule;
 import net.optm.model.BettingSchedules;
-import net.optm.model.Component;
+import net.optm.model.RepositoryGroup;
 
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.jface.layout.TreeColumnLayout;
@@ -45,8 +45,8 @@ public class RepositoryView {
 
         TreeViewer treeViewer = new TreeViewer(composite, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
 
-        Component repo = new Component();
-        Component bettingSchedules = new BettingSchedules();
+        RepositoryGroup repo = new RepositoryGroup();
+        RepositoryGroup bettingSchedules = new BettingSchedules();
         bettingSchedules.add(new BettingSchedule("first"));
         bettingSchedules.add(new BettingSchedule("second"));
         repo.add(bettingSchedules);

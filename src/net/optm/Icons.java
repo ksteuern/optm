@@ -14,18 +14,25 @@
  * limitations under the License.
  *
  */
-package net.optm.model;
 
-import net.optm.Icons;
+package net.optm;
+
+import org.eclipse.osgi.util.NLS;
 
 /**
  * @author ksteuern
- * 
+ *
  */
-public class BettingSchedule extends RepositoryItem {
+public class Icons extends NLS {
 
-    public BettingSchedule(final String name) {
-        super(name, Icons.BettingSchedules_1);
+    private static final String BUNDLE_NAME = "net.optm.icons"; //$NON-NLS-1$
+
+    public static String BettingSchedules_1;
+    static {
+        // initialize resource bundle
+        NLS.initializeMessages(BUNDLE_NAME, Icons.class);
     }
 
+    private Icons() {
+    }
 }

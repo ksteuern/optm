@@ -16,16 +16,36 @@
  */
 package net.optm.model;
 
-import net.optm.Icons;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author ksteuern
  * 
  */
-public class BettingSchedule extends RepositoryItem {
+public class RepositoryGroup extends RepositoryItem {
 
-    public BettingSchedule(final String name) {
-        super(name, Icons.BettingSchedules_1);
+    private List<RepositoryItem> children = new ArrayList<RepositoryItem>();
+
+    public RepositoryGroup() {
+        super(null, null);
+    }
+
+    public RepositoryGroup(final String name, final String imageFileName) {
+        super(name, imageFileName);
+    }
+
+    public List<RepositoryItem> getChildren() {
+        return children;
+    }
+
+    public void setChildren(final List<RepositoryItem> children) {
+        this.children = children;
+    }
+
+    public boolean add(final RepositoryItem e) {
+        e.setParent(this);
+        return children.add(e);
     }
 
 }

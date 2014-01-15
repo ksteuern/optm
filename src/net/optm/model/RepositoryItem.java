@@ -14,53 +14,24 @@
  * limitations under the License.
  *
  */
-package net.optm.model;
 
-import java.util.ArrayList;
-import java.util.List;
+package net.optm.model;
 
 /**
  * @author ksteuern
  * 
  */
-public class Component {
-
-    private Component parent;
-
-    private List<Component> children = new ArrayList<Component>();
+public class RepositoryItem {
 
     protected String name;
 
     protected String imageFileName;
 
-    public Component() {
-    }
+    protected RepositoryItem parent;
 
-    public Component(final String name, final String imageFileName) {
-        super();
+    public RepositoryItem(final String name, final String imageFileName) {
         this.name = name;
         this.imageFileName = imageFileName;
-    }
-
-    public Component getParent() {
-        return parent;
-    }
-
-    public void setParent(final Component parent) {
-        this.parent = parent;
-    }
-
-    public List<Component> getChildren() {
-        return children;
-    }
-
-    public void setChildren(final List<Component> children) {
-        this.children = children;
-    }
-
-    public boolean add(final Component e) {
-        e.setParent(this);
-        return children.add(e);
     }
 
     public String getName() {
@@ -79,4 +50,11 @@ public class Component {
         this.imageFileName = imageFileName;
     }
 
+    public RepositoryItem getParent() {
+        return parent;
+    }
+
+    public void setParent(final RepositoryItem parent) {
+        this.parent = parent;
+    }
 }

@@ -17,7 +17,7 @@
 package net.optm.view;
 
 import net.optm.model.BettingSchedule;
-import net.optm.model.Component;
+import net.optm.model.RepositoryGroup;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
@@ -61,7 +61,7 @@ public class ComponentsContentProvider implements ITreeContentProvider {
      */
     @Override
     public Object[] getElements(final Object inputElement) {
-        return ((Component) inputElement).getChildren().toArray();
+        return ((RepositoryGroup) inputElement).getChildren().toArray();
     }
 
     /*
@@ -76,7 +76,7 @@ public class ComponentsContentProvider implements ITreeContentProvider {
         if (parentElement instanceof BettingSchedule) {
             return null;
         }
-        return ((Component) parentElement).getChildren().toArray();
+        return ((RepositoryGroup) parentElement).getChildren().toArray();
     }
 
     /*
@@ -88,7 +88,7 @@ public class ComponentsContentProvider implements ITreeContentProvider {
      */
     @Override
     public Object getParent(final Object element) {
-        return ((Component) element).getParent();
+        return ((RepositoryGroup) element).getParent();
     }
 
     /*
@@ -100,9 +100,9 @@ public class ComponentsContentProvider implements ITreeContentProvider {
      */
     @Override
     public boolean hasChildren(final Object element) {
-        if (element instanceof Component) {
-            Component new_name = (Component) element;
-            return new_name.getChildren().size() > 0;
+        if (element instanceof RepositoryGroup) {
+            RepositoryGroup group = (RepositoryGroup) element;
+            return group.getChildren().size() > 0;
         }
         return false;
     }

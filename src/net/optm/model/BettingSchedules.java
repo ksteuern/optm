@@ -16,16 +16,17 @@
  */
 package net.optm.model;
 
+import net.optm.Icons;
 import net.optm.Messages;
 
 /**
  * @author ksteuern
  * 
  */
-public class BettingSchedules extends Component {
+public class BettingSchedules extends RepositoryGroup {
 
     public BettingSchedules() {
-        super(Messages.BettingSchedules_0, Messages.BettingSchedules_1);
+        super(Messages.BettingSchedules_0, Icons.BettingSchedules_1);
     }
 
 }
