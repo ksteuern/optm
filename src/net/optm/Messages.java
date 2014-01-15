@@ -24,8 +24,6 @@ public class Messages extends NLS {
 
     public static String BettingSchedules_0;
 
-    public static String BettingSchedules_1;
-
     public static String BettingScheduleView_1;
 
     public static String BettingScheduleView_2;
