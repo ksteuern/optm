@@ -14,8 +14,11 @@
       </children>
     </children>
     <mainMenu xmi:id="_N9xI0H1hEeOuH68gE5gN4Q" elementId="optm.menu.2">
-      <children xsi:type="menu:Menu" xmi:id="_DPHuQHrDEeOqndFvd5zY2Q" elementId="optm.menu.1" label="%menu.label.1">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_D-ptwHrDEeOqndFvd5zY2Q" elementId="optm.handledmenuitem.0" label="%handledmenuitem.label.1" command="_4c-aUHrCEeOqndFvd5zY2Q"/>
+      <children xsi:type="menu:Menu" xmi:id="_DPHuQHrDEeOqndFvd5zY2Q" elementId="optm.menu.file" label="%menu.label.1">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_D-ptwHrDEeOqndFvd5zY2Q" elementId="optm.menu.file.exit" label="%handledmenuitem.label.1" command="_4c-aUHrCEeOqndFvd5zY2Q"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_O0EJgH4jEeOUM9TQ0fFStw" elementId="optm.menu.help" label="%menu.label.2">
+        <children xsi:type="menu:DirectMenuItem" xmi:id="_S7rfIH4jEeOUM9TQ0fFStw" elementId="optm.menu.help.about" label="%directmenuitem.label.1"/>
       </children>
     </mainMenu>
   </children>
