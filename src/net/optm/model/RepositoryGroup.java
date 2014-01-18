@@ -17,15 +17,16 @@
 package net.optm.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
  * @author ksteuern
  * 
  */
-public class RepositoryGroup extends RepositoryItem {
+public class RepositoryGroup<T extends RepositoryItem> extends RepositoryItem {
 
-    private List<RepositoryItem> children = new ArrayList<RepositoryItem>();
+    private List<T> children = new ArrayList<T>();
 
     public RepositoryGroup() {
         super(null, null);
@@ -35,17 +36,26 @@ public class RepositoryGroup extends RepositoryItem {
         super(name, imageFileName);
     }
 
-    public List<RepositoryItem> getChildren() {
+    public List<T> getChildren() {
         return children;
     }
 
-    public void setChildren(final List<RepositoryItem> children) {
+    public void setChildren(final List<T> children) {
         this.children = children;
     }
 
-    public boolean add(final RepositoryItem e) {
+    public boolean add(final T e) {
         e.setParent(this);
         return children.add(e);
+    }
+
+    public boolean remove(final T e) {
+        e.setParent(null);
+        return children.remove(e);
+    }
+
+    public boolean addAll(final Collection<? extends T> c) {
+        return children.addAll(c);
     }
 
 }

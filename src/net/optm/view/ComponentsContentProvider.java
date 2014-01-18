@@ -61,7 +61,7 @@ public class ComponentsContentProvider implements ITreeContentProvider {
      */
     @Override
     public Object[] getElements(final Object inputElement) {
-        return ((RepositoryGroup) inputElement).getChildren().toArray();
+        return ((RepositoryGroup<?>) inputElement).getChildren().toArray();
     }
 
     /*
@@ -76,7 +76,7 @@ public class ComponentsContentProvider implements ITreeContentProvider {
         if (parentElement instanceof BettingSchedule) {
             return null;
         }
-        return ((RepositoryGroup) parentElement).getChildren().toArray();
+        return ((RepositoryGroup<?>) parentElement).getChildren().toArray();
     }
 
     /*
@@ -88,7 +88,7 @@ public class ComponentsContentProvider implements ITreeContentProvider {
      */
     @Override
     public Object getParent(final Object element) {
-        return ((RepositoryGroup) element).getParent();
+        return ((RepositoryGroup<?>) element).getParent();
     }
 
     /*
@@ -101,7 +101,7 @@ public class ComponentsContentProvider implements ITreeContentProvider {
     @Override
     public boolean hasChildren(final Object element) {
         if (element instanceof RepositoryGroup) {
-            RepositoryGroup group = (RepositoryGroup) element;
+            RepositoryGroup<?> group = (RepositoryGroup<?>) element;
             return group.getChildren().size() > 0;
         }
         return false;

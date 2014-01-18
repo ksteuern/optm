@@ -14,19 +14,23 @@
  * limitations under the License.
  *
  */
+
 package net.optm.model;
 
 import net.optm.Icons;
-import net.optm.Messages;
 
 /**
  * @author ksteuern
  * 
  */
-public class BettingSchedules extends RepositoryGroup<BettingSchedule> {
+public class Player extends RepositoryItem {
 
-    public BettingSchedules() {
-        super(Messages.BettingSchedules_0, Icons.BettingSchedules_1);
+    /**
+     * @param name
+     * @param imageFileName
+     */
+    public Player(final String name) {
+        super(name, Icons.Players_1);
     }
 
 }

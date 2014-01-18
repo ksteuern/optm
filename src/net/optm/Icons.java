@@ -28,6 +28,8 @@ public class Icons extends NLS {
     private static final String BUNDLE_NAME = "net.optm.icons"; //$NON-NLS-1$
 
     public static String BettingSchedules_1;
+
+    public static String Players_1;
     static {
         // initialize resource bundle
         NLS.initializeMessages(BUNDLE_NAME, Icons.class);

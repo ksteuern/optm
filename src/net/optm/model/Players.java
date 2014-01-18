@@ -14,6 +14,7 @@
  * limitations under the License.
  *
  */
+
 package net.optm.model;
 
 import net.optm.Icons;
@@ -23,10 +24,9 @@ import net.optm.Messages;
  * @author ksteuern
  * 
  */
-public class BettingSchedules extends RepositoryGroup<BettingSchedule> {
+public class Players extends RepositoryGroup<Player> {
 
-    public BettingSchedules() {
-        super(Messages.BettingSchedules_0, Icons.BettingSchedules_1);
+    public Players() {
+        super(Messages.Players_0, Icons.Players_1);
     }
-
 }

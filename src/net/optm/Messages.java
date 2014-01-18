@@ -31,6 +31,8 @@ public class Messages extends NLS {
     public static String BettingScheduleView_3;
 
     public static String BettingScheduleView_4;
+
+    public static String Players_0;
     static {
         // initialize resource bundle
         NLS.initializeMessages(BUNDLE_NAME, Messages.class);
