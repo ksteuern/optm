@@ -16,7 +16,6 @@
  */
 package net.optm.model;
 
-import net.optm.Icons;
 import net.optm.Messages;
 
 /**
@@ -26,7 +25,7 @@ import net.optm.Messages;
 public class BettingSchedules extends RepositoryGroup<BettingSchedule> {
 
     public BettingSchedules() {
-        super(Messages.BettingSchedules_0, Icons.BettingSchedules_1);
+        super(Messages.BettingSchedules_0);
     }
 
 }

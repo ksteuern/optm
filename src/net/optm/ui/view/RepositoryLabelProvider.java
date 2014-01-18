@@ -18,6 +18,11 @@ package net.optm.ui.view;
 
 import java.net.URL;
 
+import net.optm.Icons;
+import net.optm.model.BettingSchedule;
+import net.optm.model.BettingSchedules;
+import net.optm.model.Player;
+import net.optm.model.Players;
 import net.optm.model.RepositoryItem;
 
 import org.eclipse.core.runtime.FileLocator;
@@ -28,7 +33,7 @@ import org.eclipse.swt.graphics.Image;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
-public class ComponentsLabelProvider extends LabelProvider {
+public class RepositoryLabelProvider extends LabelProvider {
 
     @Override
     public String getText(final Object element) {
@@ -39,18 +44,21 @@ public class ComponentsLabelProvider extends LabelProvider {
 
     @Override
     public Image getImage(final Object element) {
-        if (element instanceof RepositoryItem) {
-            RepositoryItem component = (RepositoryItem) element;
-            if (component.getImageFileName() != null) {
-                return getImageFromPlugin(component.getImageFileName());
-            }
+        if (element instanceof BettingSchedules) {
+            return getImageFromPlugin(Icons.BettingSchedules_1);
+        } else if (element instanceof BettingSchedule) {
+            return getImageFromPlugin(Icons.BettingSchedules_1);
+        } else if (element instanceof Players) {
+            return getImageFromPlugin(Icons.Players_1);
+        } else if (element instanceof Player) {
+            return getImageFromPlugin(Icons.Players_1);
         }
         return null;
     }
 
     // Helper Method to load the images
     private Image getImageFromPlugin(final String file) {
-        Bundle bundle = FrameworkUtil.getBundle(ComponentsLabelProvider.class);
+        Bundle bundle = FrameworkUtil.getBundle(RepositoryLabelProvider.class);
         URL url = FileLocator.find(bundle, new Path("icons/" + file), null);
         ImageDescriptor image = ImageDescriptor.createFromURL(url);
         return image.createImage();

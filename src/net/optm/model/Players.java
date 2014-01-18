@@ -17,7 +17,6 @@
 
 package net.optm.model;
 
-import net.optm.Icons;
 import net.optm.Messages;
 
 /**
@@ -27,6 +26,6 @@ import net.optm.Messages;
 public class Players extends RepositoryGroup<Player> {
 
     public Players() {
-        super(Messages.Players_0, Icons.Players_1);
+        super(Messages.Players_0);
     }
 }

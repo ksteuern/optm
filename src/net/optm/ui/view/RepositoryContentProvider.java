@@ -26,7 +26,7 @@ import org.eclipse.jface.viewers.Viewer;
  * @author ksteuern
  * 
  */
-public class ComponentsContentProvider implements ITreeContentProvider {
+public class RepositoryContentProvider implements ITreeContentProvider {
 
     /*
      * (non-Javadoc)

@@ -16,7 +16,6 @@
  */
 package net.optm.model;
 
-import net.optm.Icons;
 
 /**
  * @author ksteuern
@@ -25,7 +24,7 @@ import net.optm.Icons;
 public class BettingSchedule extends RepositoryItem {
 
     public BettingSchedule(final String name) {
-        super(name, Icons.BettingSchedules_1);
+        super(name);
     }
 
 }

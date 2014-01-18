@@ -17,7 +17,6 @@
 
 package net.optm.model;
 
-import net.optm.Icons;
 
 /**
  * @author ksteuern
@@ -30,7 +29,7 @@ public class Player extends RepositoryItem {
      * @param imageFileName
      */
     public Player(final String name) {
-        super(name, Icons.Players_1);
+        super(name);
     }
 
 }

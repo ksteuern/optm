@@ -31,6 +31,7 @@ public class Repository extends RepositoryGroup<RepositoryItem> {
     private Players players;
 
     public Repository() {
+        super("Repository");
         bettingSchedules = new BettingSchedules();
         players = new Players();
     }

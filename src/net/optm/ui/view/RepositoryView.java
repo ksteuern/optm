@@ -45,15 +45,21 @@ public class RepositoryView {
 
         TreeViewer treeViewer = new TreeViewer(composite, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
 
+        treeViewer.setContentProvider(new RepositoryContentProvider());
+        treeViewer.setLabelProvider(new RepositoryLabelProvider());
+        treeViewer.setInput(getDummyInput());
+
+    }
+
+    /**
+     * @return
+     */
+    private Repository getDummyInput() {
         Repository repo = new Repository();
         repo.getBettingSchedules().add(new BettingSchedule("first"));
         repo.getBettingSchedules().add(new BettingSchedule("second"));
         repo.getPlayers().add(new Player("heinz"));
-
-        treeViewer.setContentProvider(new ComponentsContentProvider());
-        treeViewer.setLabelProvider(new ComponentsLabelProvider());
-        treeViewer.setInput(repo);
-
+        return repo;
     }
 
     @PreDestroy

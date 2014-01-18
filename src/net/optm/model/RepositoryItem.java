@@ -25,13 +25,10 @@ public class RepositoryItem {
 
     protected String name;
 
-    protected String imageFileName;
-
     protected RepositoryItem parent;
 
-    public RepositoryItem(final String name, final String imageFileName) {
+    public RepositoryItem(final String name) {
         this.name = name;
-        this.imageFileName = imageFileName;
     }
 
     public String getName() {
@@ -40,14 +37,6 @@ public class RepositoryItem {
 
     public void setName(final String name) {
         this.name = name;
-    }
-
-    public String getImageFileName() {
-        return imageFileName;
-    }
-
-    public void setImageFileName(final String imageFileName) {
-        this.imageFileName = imageFileName;
     }
 
     public RepositoryItem getParent() {

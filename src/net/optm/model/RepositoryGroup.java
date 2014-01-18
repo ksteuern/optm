@@ -28,12 +28,8 @@ public class RepositoryGroup<T extends RepositoryItem> extends RepositoryItem {
 
     private List<T> children = new ArrayList<T>();
 
-    public RepositoryGroup() {
-        super(null, null);
-    }
-
-    public RepositoryGroup(final String name, final String imageFileName) {
-        super(name, imageFileName);
+    public RepositoryGroup(final String name) {
+        super(name);
     }
 
     public List<T> getChildren() {
