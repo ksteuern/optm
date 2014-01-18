@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-package net.optm.view;
+package net.optm.ui.view;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
