@@ -21,3 +21,4 @@ Import-Package: javax.annotation;version="1.0.0",
  org.slf4j;version="1.7.2"
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
+Export-Package: net.optm

@@ -19,11 +19,14 @@
       </children>
       <children xsi:type="menu:Menu" xmi:id="_O0EJgH4jEeOUM9TQ0fFStw" elementId="optm.menu.help" label="%optm.menu.help_label">
         <children xsi:type="menu:DirectMenuItem" xmi:id="_S7rfIH4jEeOUM9TQ0fFStw" elementId="optm.menu.help.about" label="%optm.menu.help.about_label"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_jz3IgIEpEeOiYd6RMLHa5A" elementId="optm.handledmenuitem.0" label="eval" command="_YJVbEIEpEeOiYd6RMLHa5A"/>
       </children>
     </mainMenu>
   </children>
   <handlers xmi:id="_a2hpMHyLEeONJtDp24fk8A" elementId="net.optm.handlers.exit" contributionURI="bundleclass://optm/net.optm.ui.handler.ExitHandler" command="_4c-aUHrCEeOqndFvd5zY2Q"/>
+  <handlers xmi:id="_SOYfkIEpEeOiYd6RMLHa5A" elementId="optm.handler.0" contributionURI="bundleclass://optm/net.optm.ui.handler.EvaluateContributionsHandler" command="_YJVbEIEpEeOiYd6RMLHa5A"/>
   <commands xmi:id="_4c-aUHrCEeOqndFvd5zY2Q" elementId="org.eclipse.ui.file.exit" commandName="%optm.command.exit_commandname"/>
+  <commands xmi:id="_YJVbEIEpEeOiYd6RMLHa5A" elementId="optm.command.0" commandName="evaluate extensions"/>
   <addons xmi:id="_kD4HknowEeOLc8noYQpn9g" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_kD4Hk3owEeOLc8noYQpn9g" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_kD4HlHowEeOLc8noYQpn9g" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
