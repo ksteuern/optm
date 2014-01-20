@@ -47,12 +47,10 @@ public class RepositoryView {
         composite.setLayout(new TreeColumnLayout());
 
         TreeViewer treeViewer = new TreeViewer(composite, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
-
         treeViewer.addDoubleClickListener(new IDoubleClickListener() {
 
             @Override
             public void doubleClick(final DoubleClickEvent event) {
-                TreeViewer viewer = (TreeViewer) event.getViewer();
                 IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
                 Object selectedNode = thisSelection.getFirstElement();
                 System.out.println(selectedNode);
@@ -66,7 +64,6 @@ public class RepositoryView {
         treeViewer.setContentProvider(new RepositoryContentProvider());
         treeViewer.setLabelProvider(new RepositoryLabelProvider());
         treeViewer.setInput(getDummyInput());
-
     }
 
     /**
