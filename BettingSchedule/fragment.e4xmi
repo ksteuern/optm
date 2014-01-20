@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_L-US4IEtEeOK25BmXUmR4Q">
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_C72-cIEuEeOK25BmXUmR4Q" featurename="children" parentElementId="optm.menu.help">
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_Yznk0IFCEeOcC9ncQowqRQ" elementId="bettingschedule.handledmenuitem.0" label="con" command="_HCzxYIINEeOcaIwZzJ_8uw"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_JixeoIILEeOcaIwZzJ_8uw" featurename="children" parentElementId="optm.partstack.0">
+    <elements xsi:type="basic:Part" xmi:id="_QLe4AIILEeOcaIwZzJ_8uw" elementId="bettingschedule.part.0" contributionURI="bundleclass://BettingSchedule/bettingschedule.BettingScheduleView" label="Bettings" closeable="true"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_FzFO4IINEeOcaIwZzJ_8uw" featurename="commands" parentElementId="org.eclipse.e4.ide.application">
+    <elements xsi:type="commands:Command" xmi:id="_HCzxYIINEeOcaIwZzJ_8uw" elementId="bettingschedule.command.0" commandName="openbettings"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Kj1BEIINEeOcaIwZzJ_8uw" featurename="handlers" parentElementId="org.eclipse.e4.ide.application">
+    <elements xsi:type="commands:Handler" xmi:id="_LWWDIIINEeOcaIwZzJ_8uw" elementId="bettingschedule.handler.0" contributionURI="bundleclass://BettingSchedule/bettingschedule.OpenBettings" command="_HCzxYIINEeOcaIwZzJ_8uw"/>
+  </fragments>
+</fragment:ModelFragments>
