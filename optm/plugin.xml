@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
+   <extension-point id="extension_repository" name="Repository" schema="schema/net.optm.extensionpoint.repository.exsd"/>
 
    <extension
          id="product"

@@ -25,6 +25,9 @@ import net.optm.model.Repository;
 
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.jface.layout.TreeColumnLayout;
+import org.eclipse.jface.viewers.DoubleClickEvent;
+import org.eclipse.jface.viewers.IDoubleClickListener;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
@@ -44,11 +47,23 @@ public class RepositoryView {
         composite.setLayout(new TreeColumnLayout());
 
         TreeViewer treeViewer = new TreeViewer(composite, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
+        treeViewer.addDoubleClickListener(new IDoubleClickListener() {
 
+            @Override
+            public void doubleClick(final DoubleClickEvent event) {
+                IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
+                Object selectedNode = thisSelection.getFirstElement();
+                System.out.println(selectedNode);
+                if (selectedNode instanceof BettingSchedule) {
+                    System.out.println("BettingSchedule: " + ((BettingSchedule) selectedNode).getName());
+                } else if (selectedNode instanceof Player) {
+                    System.out.println("Player: " + ((Player) selectedNode).getName());
+                }
+            }
+        });
         treeViewer.setContentProvider(new RepositoryContentProvider());
         treeViewer.setLabelProvider(new RepositoryLabelProvider());
         treeViewer.setInput(getDummyInput());
-
     }
 
     /**
@@ -72,3 +87,4 @@ public class RepositoryView {
     }
 
 }
+
