@@ -18,12 +18,14 @@ package net.optm.ui.view;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.inject.Inject;
 
 import net.optm.model.BettingSchedule;
 import net.optm.model.Player;
 import net.optm.model.Repository;
 
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.workbench.swt.modeling.EMenuService;
 import org.eclipse.jface.layout.TreeColumnLayout;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
@@ -31,8 +33,13 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Tree;
 
+@SuppressWarnings("restriction")
 public class RepositoryView {
+
+    @Inject
+    private EMenuService menuService;
 
     public RepositoryView() {
     }
@@ -53,7 +60,6 @@ public class RepositoryView {
             public void doubleClick(final DoubleClickEvent event) {
                 IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
                 Object selectedNode = thisSelection.getFirstElement();
-                System.out.println(selectedNode);
                 if (selectedNode instanceof BettingSchedule) {
                     System.out.println("BettingSchedule: " + ((BettingSchedule) selectedNode).getName());
                 } else if (selectedNode instanceof Player) {
@@ -64,6 +70,8 @@ public class RepositoryView {
         treeViewer.setContentProvider(new RepositoryContentProvider());
         treeViewer.setLabelProvider(new RepositoryLabelProvider());
         treeViewer.setInput(getDummyInput());
+        Tree tree = treeViewer.getTree();
+        menuService.registerContextMenu(tree, "optm.popupmenu.0");
     }
 
     /**
@@ -87,4 +95,3 @@ public class RepositoryView {
     }
 
 }
-

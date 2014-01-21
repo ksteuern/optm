@@ -51,7 +51,7 @@ public class BettingScheduleView {
     }
 
     @PostConstruct
-    public void postConstruct(final Composite parent) {
+    public void createControls(final Composite parent) {
 
         Composite composite = new Composite(parent, SWT.NONE);
         TableColumnLayout tcl_composite = new TableColumnLayout();

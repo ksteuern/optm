@@ -4,12 +4,15 @@
     <elements xsi:type="menu:HandledMenuItem" xmi:id="_Yznk0IFCEeOcC9ncQowqRQ" elementId="bettingschedule.handledmenuitem.0" label="con" command="_HCzxYIINEeOcaIwZzJ_8uw"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_JixeoIILEeOcaIwZzJ_8uw" featurename="children" parentElementId="optm.partstack.0">
-    <elements xsi:type="basic:Part" xmi:id="_QLe4AIILEeOcaIwZzJ_8uw" elementId="bettingschedule.part.0" contributionURI="bundleclass://BettingSchedule/bettingschedule.BettingScheduleView" label="Bettings" closeable="true"/>
+    <elements xsi:type="basic:Part" xmi:id="_QLe4AIILEeOcaIwZzJ_8uw" elementId="bettingschedule.part.0" contributionURI="bundleclass://BettingSchedule/bettingschedule.BettingScheduleView" label="BettingSchedule" closeable="true"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_FzFO4IINEeOcaIwZzJ_8uw" featurename="commands" parentElementId="org.eclipse.e4.ide.application">
     <elements xsi:type="commands:Command" xmi:id="_HCzxYIINEeOcaIwZzJ_8uw" elementId="bettingschedule.command.0" commandName="openbettings"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Kj1BEIINEeOcaIwZzJ_8uw" featurename="handlers" parentElementId="org.eclipse.e4.ide.application">
     <elements xsi:type="commands:Handler" xmi:id="_LWWDIIINEeOcaIwZzJ_8uw" elementId="bettingschedule.handler.0" contributionURI="bundleclass://BettingSchedule/bettingschedule.OpenBettings" command="_HCzxYIINEeOcaIwZzJ_8uw"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_UhAZ0ILnEeOJ1oqJxeZp-w" featurename="children" parentElementId="optm.popupmenu.0">
+    <elements xsi:type="menu:HandledMenuItem" xmi:id="_ZZpjwILnEeOJ1oqJxeZp-w" elementId="bettingschedule.handledmenuitem.1" label="open" command="_HCzxYIINEeOcaIwZzJ_8uw"/>
   </fragments>
 </fragment:ModelFragments>
