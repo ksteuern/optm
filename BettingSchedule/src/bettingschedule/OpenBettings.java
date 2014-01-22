@@ -10,8 +10,9 @@ public class OpenBettings {
 
     @Execute
     public void execute(final EPartService partService) {
-        MPart mpart = partService.showPart("bettingschedule.part.0", PartState.ACTIVATE);
-        System.out.println(mpart);
+        MPart part = partService.findPart("bettingschedule.part.0");
+        part.setVisible(true);
+        partService.showPart(part, PartState.VISIBLE);
     }
 
     @CanExecute
