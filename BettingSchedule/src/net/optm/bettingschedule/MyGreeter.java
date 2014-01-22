@@ -1,4 +1,4 @@
-package bettingschedule;
+package net.optm.bettingschedule;
 
 import net.optm.Greeter;
 

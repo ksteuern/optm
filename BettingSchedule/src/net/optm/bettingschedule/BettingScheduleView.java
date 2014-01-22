@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-package bettingschedule;
+package net.optm.bettingschedule;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;

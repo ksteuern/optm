@@ -1,4 +1,4 @@
-package bettingschedule;
+package net.optm.bettingschedule;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
