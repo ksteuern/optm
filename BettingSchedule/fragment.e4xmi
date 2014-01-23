@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
 <fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_L-US4IEtEeOK25BmXUmR4Q">
-  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_C72-cIEuEeOK25BmXUmR4Q" featurename="children" parentElementId="optm.menu.help"/>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_JixeoIILEeOcaIwZzJ_8uw" featurename="children" parentElementId="optm.partstack.0">
     <elements xsi:type="basic:Part" xmi:id="_QLe4AIILEeOcaIwZzJ_8uw" elementId="net.optm.bettingschedule.part.bettingSchedule" contributionURI="bundleclass://BettingSchedule/net.optm.bettingschedule.view.BettingScheduleView" label="%part.label.1" closeable="true"/>
   </fragments>
@@ -8,7 +7,7 @@
     <elements xsi:type="commands:Command" xmi:id="_HCzxYIINEeOcaIwZzJ_8uw" elementId="net.optm.bettingschedule.command.open" commandName="open"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Kj1BEIINEeOcaIwZzJ_8uw" featurename="handlers" parentElementId="org.eclipse.e4.ide.application">
-    <elements xsi:type="commands:Handler" xmi:id="_LWWDIIINEeOcaIwZzJ_8uw" elementId="net.optm.bettingschedule.handler.open" contributionURI="bundleclass://BettingSchedule/net.optm.bettingschedule.handler.OpenBettings" command="_HCzxYIINEeOcaIwZzJ_8uw"/>
+    <elements xsi:type="commands:Handler" xmi:id="_LWWDIIINEeOcaIwZzJ_8uw" elementId="net.optm.bettingschedule.handler.open" contributionURI="bundleclass://BettingSchedule/net.optm.bettingschedule.handler.OpenBettingSchedule" command="_HCzxYIINEeOcaIwZzJ_8uw"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_UhAZ0ILnEeOJ1oqJxeZp-w" featurename="children" parentElementId="optm.popupmenu.0">
     <elements xsi:type="menu:HandledMenuItem" xmi:id="_ZZpjwILnEeOJ1oqJxeZp-w" elementId="bettingschedule.handledmenuitem.1" label="open" command="_HCzxYIINEeOcaIwZzJ_8uw"/>

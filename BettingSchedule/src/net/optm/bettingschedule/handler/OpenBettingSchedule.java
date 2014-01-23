@@ -2,7 +2,7 @@ package net.optm.bettingschedule.handler;
 
 import javax.inject.Named;
 
-import net.optm.bettingschedule.model.BettingSchedule;
+import net.optm.model.BettingSchedule;
 
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;
@@ -12,7 +12,7 @@ import org.eclipse.e4.ui.services.IServiceConstants;
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService.PartState;
 
-public class OpenBettings {
+public class OpenBettingSchedule {
 
     @Execute
     public void execute(final EPartService partService, @Optional @Named(IServiceConstants.ACTIVE_SELECTION) final BettingSchedule schedule) {
