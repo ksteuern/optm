@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-package net.optm.ui.handler;
+package net.optm.handler;
 
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;

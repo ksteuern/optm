@@ -22,5 +22,8 @@
          </property>
       </product>
    </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+   </extension>
 
 </plugin>

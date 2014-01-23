@@ -1,4 +1,4 @@
-package net.optm.bettingschedule;
+package net.optm.bettingschedule.handler;
 
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;

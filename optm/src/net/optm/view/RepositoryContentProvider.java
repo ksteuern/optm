@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-package net.optm.ui.view;
+package net.optm.view;
 
 import net.optm.model.BettingSchedule;
 import net.optm.model.RepositoryGroup;

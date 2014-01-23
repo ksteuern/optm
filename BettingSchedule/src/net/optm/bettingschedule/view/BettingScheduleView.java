@@ -14,10 +14,12 @@
  * limitations under the License.
  *
  */
-package net.optm.bettingschedule;
+package net.optm.bettingschedule.view;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+
+import net.optm.bettingschedule.Messages;
 
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.di.Persist;

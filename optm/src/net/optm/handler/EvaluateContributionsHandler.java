@@ -1,4 +1,4 @@
-package net.optm.ui.handler;
+package net.optm.handler;
 
 import net.optm.Greeter;
 

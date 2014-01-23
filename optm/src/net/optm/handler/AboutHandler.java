@@ -8,7 +8,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
-package net.optm.ui.handler;
+package net.optm.handler;
 
 import javax.inject.Named;
 
