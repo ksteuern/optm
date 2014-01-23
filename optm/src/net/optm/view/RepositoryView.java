@@ -25,11 +25,14 @@ import net.optm.model.Player;
 import net.optm.model.Repository;
 
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.e4.ui.workbench.swt.modeling.EMenuService;
 import org.eclipse.jface.layout.TreeColumnLayout;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
@@ -40,6 +43,9 @@ public class RepositoryView {
 
     @Inject
     private EMenuService menuService;
+
+    @Inject
+    ESelectionService service;
 
     public RepositoryView() {
     }
@@ -53,7 +59,7 @@ public class RepositoryView {
         Composite composite = new Composite(parent, SWT.NONE);
         composite.setLayout(new TreeColumnLayout());
 
-        TreeViewer treeViewer = new TreeViewer(composite, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
+        final TreeViewer treeViewer = new TreeViewer(composite, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
         treeViewer.addDoubleClickListener(new IDoubleClickListener() {
 
             @Override
@@ -65,6 +71,14 @@ public class RepositoryView {
                 } else if (selectedNode instanceof Player) {
                     System.out.println("Player: " + ((Player) selectedNode).getName());
                 }
+            }
+        });
+        treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+
+            @Override
+            public void selectionChanged(final SelectionChangedEvent event) {
+                IStructuredSelection selection = (IStructuredSelection) treeViewer.getSelection();
+                service.setSelection(selection.getFirstElement());
             }
         });
         treeViewer.setContentProvider(new RepositoryContentProvider());

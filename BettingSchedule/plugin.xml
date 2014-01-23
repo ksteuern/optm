@@ -14,5 +14,8 @@
             uri="fragment.e4xmi">
       </fragment>
    </extension>
+   <extension
+         point="org.eclipse.core.expressions.definitions">
+   </extension>
 
 </plugin>
