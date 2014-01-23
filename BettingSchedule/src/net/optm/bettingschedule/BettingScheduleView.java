@@ -41,7 +41,7 @@ import org.eclipse.swt.widgets.Text;
 public class BettingScheduleView {
 
     private final String[][] schedule = { {"1", "5", "10", "20"}, //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-            {"2", "10", "20", "20"}}; //$NON-NLS-1$ //$NON-NLS-2$
+            {"2", "10", "20", "20"}}; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 
     private Table table;
 
@@ -65,22 +65,22 @@ public class BettingScheduleView {
         TableViewerColumn tableViewerColumn = new TableViewerColumn(tableViewer, SWT.NONE);
         TableColumn tblclmnNewColumn = tableViewerColumn.getColumn();
         tcl_composite.setColumnData(tblclmnNewColumn, new ColumnPixelData(150, true, true));
-        tblclmnNewColumn.setText("Level");
+        tblclmnNewColumn.setText(Messages.BettingScheduleView_level);
 
         TableViewerColumn tableViewerColumn_1 = new TableViewerColumn(tableViewer, SWT.NONE);
         TableColumn tblclmnNewColumn_1 = tableViewerColumn_1.getColumn();
         tcl_composite.setColumnData(tblclmnNewColumn_1, new ColumnPixelData(150, true, true));
-        tblclmnNewColumn_1.setText("Small Blind");
+        tblclmnNewColumn_1.setText(Messages.BettingScheduleView_small_blind);
 
         TableViewerColumn tableViewerColumn_2 = new TableViewerColumn(tableViewer, SWT.NONE);
         TableColumn tblclmnNewColumn_2 = tableViewerColumn_2.getColumn();
         tcl_composite.setColumnData(tblclmnNewColumn_2, new ColumnPixelData(150, true, true));
-        tblclmnNewColumn_2.setText("Big Blind");
+        tblclmnNewColumn_2.setText(Messages.BettingScheduleView_big_blind);
 
         TableViewerColumn tableViewerColumn_3 = new TableViewerColumn(tableViewer, SWT.NONE);
         TableColumn tblclmnNewColumn_3 = tableViewerColumn_3.getColumn();
         tcl_composite.setColumnData(tblclmnNewColumn_3, new ColumnPixelData(150, true, true));
-        tblclmnNewColumn_3.setText("Dauer");
+        tblclmnNewColumn_3.setText(Messages.BettingScheduleView_duration);
 
         for (String[] level : schedule) {
             TableItem tableItem = new TableItem(table, SWT.NONE);

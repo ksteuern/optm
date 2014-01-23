@@ -14,17 +14,26 @@
  * limitations under the License.
  *
  */
-package net.optm;
+
+package net.optm.bettingschedule;
 
 import org.eclipse.osgi.util.NLS;
 
+/**
+ * @author ksteuern
+ *
+ */
 public class Messages extends NLS {
 
-    private static final String BUNDLE_NAME = "net.optm.messages"; //$NON-NLS-1$
+    private static final String BUNDLE_NAME = "net.optm.bettingschedule.messages"; //$NON-NLS-1$
 
-    public static String BettingSchedules_0;
+    public static String BettingScheduleView_big_blind;
 
-    public static String Players_0;
+    public static String BettingScheduleView_duration;
+
+    public static String BettingScheduleView_level;
+
+    public static String BettingScheduleView_small_blind;
     static {
         // initialize resource bundle
         NLS.initializeMessages(BUNDLE_NAME, Messages.class);
