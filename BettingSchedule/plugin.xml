@@ -4,7 +4,7 @@
    <extension
          point="optm.extension_repository">
       <client
-            class="bettingschedule.MyGreeter">
+            class="net.optm.bettingschedule.MyGreeter">
       </client>
    </extension>
    <extension
