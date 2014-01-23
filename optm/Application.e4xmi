@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_kD4HkHowEeOLc8noYQpn9g" elementId="org.eclipse.e4.ide.application">
-  <children xsi:type="basic:Window" xmi:id="_KLi0YH1hEeOuH68gE5gN4Q" elementId="optm.window.0" label="%window.label.1">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_0CPEEIQoEeOiCpWehDhczQ" elementId="optm.trimmedwindow.0" label="%window.label.1">
     <children xsi:type="advanced:PerspectiveStack" xmi:id="_2Ia1oHoxEeOLc8noYQpn9g" elementId="optm.perspectivestack.0">
       <children xsi:type="advanced:Perspective" xmi:id="_58ztQHoxEeOLc8noYQpn9g" elementId="optm.perspective.tournament" label="%perspective.label.1">
         <children xsi:type="basic:PartSashContainer" xmi:id="_X52-gH1hEeOuH68gE5gN4Q" elementId="optm.partsashcontainer.0" containerData="10000" horizontal="true">
@@ -13,12 +13,12 @@
         </children>
       </children>
     </children>
-    <mainMenu xmi:id="_N9xI0H1hEeOuH68gE5gN4Q" elementId="optm.menu.2">
+    <mainMenu xmi:id="_81xWQIQoEeOiCpWehDhczQ" elementId="optm.menu.2">
       <children xsi:type="menu:Menu" xmi:id="_DPHuQHrDEeOqndFvd5zY2Q" elementId="optm.menu.file" label="%optm.menu.file_label">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_D-ptwHrDEeOqndFvd5zY2Q" elementId="optm.menu.file.exit" label="%optm.menu.file.exit_label" command="_4c-aUHrCEeOqndFvd5zY2Q"/>
       </children>
       <children xsi:type="menu:Menu" xmi:id="_O0EJgH4jEeOUM9TQ0fFStw" elementId="optm.menu.help" label="%optm.menu.help_label">
-        <children xsi:type="menu:DirectMenuItem" xmi:id="_S7rfIH4jEeOUM9TQ0fFStw" elementId="optm.menu.help.about" label="%optm.menu.help.about_label"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_ektWEIQpEeOiCpWehDhczQ" elementId="optm.menu.help.about" label="%optm.menu.help.about_label" command="_dRZQQIIJEeOcaIwZzJ_8uw"/>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_jz3IgIEpEeOiYd6RMLHa5A" elementId="optm.handledmenuitem.0" label="eval" command="_YJVbEIEpEeOiYd6RMLHa5A"/>
       </children>
     </mainMenu>
