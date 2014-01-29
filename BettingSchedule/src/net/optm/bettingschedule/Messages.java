@@ -21,11 +21,13 @@ import org.eclipse.osgi.util.NLS;
 
 /**
  * @author ksteuern
- *
+ * 
  */
 public class Messages extends NLS {
 
     private static final String BUNDLE_NAME = "net.optm.bettingschedule.messages"; //$NON-NLS-1$
+
+    public static String BettingScheduleView_ante;
 
     public static String BettingScheduleView_big_blind;
 
@@ -34,6 +36,8 @@ public class Messages extends NLS {
     public static String BettingScheduleView_level;
 
     public static String BettingScheduleView_small_blind;
+
+    public static String BettingScheduleView_tltmNewItem_toolTipText;
     static {
         // initialize resource bundle
         NLS.initializeMessages(BUNDLE_NAME, Messages.class);

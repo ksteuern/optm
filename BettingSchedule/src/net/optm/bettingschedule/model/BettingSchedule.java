@@ -16,6 +16,9 @@
  */
 package net.optm.bettingschedule.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.optm.model.RepositoryItem;
 
 /**
@@ -24,8 +27,19 @@ import net.optm.model.RepositoryItem;
  */
 public class BettingSchedule extends RepositoryItem {
 
+    private List<Level> levels;
+
     public BettingSchedule(final String name) {
         super(name);
+        levels = new ArrayList<>();
+    }
+
+    public List<Level> getLevels() {
+        return levels;
+    }
+
+    public void setLevels(final List<Level> levels) {
+        this.levels = levels;
     }
 
 }

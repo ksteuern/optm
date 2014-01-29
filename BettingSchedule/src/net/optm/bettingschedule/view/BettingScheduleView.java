@@ -16,36 +16,41 @@
  */
 package net.optm.bettingschedule.view;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import net.optm.bettingschedule.Messages;
+import net.optm.bettingschedule.model.Level;
 
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.di.Persist;
-import org.eclipse.jface.layout.TableColumnLayout;
-import org.eclipse.jface.viewers.ColumnPixelData;
+import org.eclipse.jface.viewers.ArrayContentProvider;
+import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.TableEditor;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.FormAttachment;
+import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.layout.FormLayout;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
-import org.eclipse.swt.widgets.TableItem;
-import org.eclipse.swt.widgets.Text;
+import org.eclipse.swt.widgets.ToolBar;
+import org.eclipse.swt.widgets.ToolItem;
+import org.eclipse.wb.swt.ResourceManager;
 
 public class BettingScheduleView {
 
-    private final String[][] schedule = { {"1", "5", "10", "20"}, //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-            {"2", "10", "20", "20"}}; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-
     private Table table;
+
+    private List<Level> levels;
 
     @Inject
     public BettingScheduleView() {
@@ -54,81 +59,114 @@ public class BettingScheduleView {
 
     @PostConstruct
     public void createControls(final Composite parent) {
+        levels = new ArrayList<>();
+        levels.add(new Level("1", 5, 10, 0, 20)); //$NON-NLS-1$
+        levels.add(new Level("2", 10, 20, 0, 20)); //$NON-NLS-1$
+
+        parent.setLayout(new FormLayout());
 
         Composite composite = new Composite(parent, SWT.NONE);
-        TableColumnLayout tcl_composite = new TableColumnLayout();
-        composite.setLayout(tcl_composite);
+        FormData fd_composite = new FormData();
+        fd_composite.bottom = new FormAttachment(0, 298);
+        fd_composite.right = new FormAttachment(0, 600);
+        fd_composite.top = new FormAttachment(0);
+        fd_composite.left = new FormAttachment(0);
+        composite.setLayoutData(fd_composite);
+        composite.setLayout(new GridLayout(1, false));
 
-        TableViewer tableViewer = new TableViewer(composite, SWT.BORDER | SWT.FULL_SELECTION);
+        ToolBar toolBar = new ToolBar(composite, SWT.FLAT | SWT.RIGHT);
+
+        ToolItem tltmNewItem = new ToolItem(toolBar, SWT.NONE);
+        tltmNewItem.setImage(ResourceManager.getPluginImage("optm", "icons/add.png"));
+        tltmNewItem.setToolTipText(Messages.BettingScheduleView_tltmNewItem_toolTipText);
+
+        final TableViewer tableViewer = new TableViewer(composite, SWT.BORDER | SWT.FULL_SELECTION);
         table = tableViewer.getTable();
+        tltmNewItem.addListener(SWT.Selection, new Listener() {
+
+            @Override
+            public void handleEvent(final Event event) {
+                System.out.println("add new level"); //$NON-NLS-1$
+                levels.add(new Level(Integer.toString(levels.size() + 1), 0, 0, 0, 0));
+                tableViewer.refresh(true, true);
+            }
+        });
+        GridData gd_table = new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1);
+        gd_table.heightHint = 400;
+        // gd_table.widthHint = 390;
+        table.setLayoutData(gd_table);
         table.setHeaderVisible(true);
         table.setLinesVisible(true);
 
-        TableViewerColumn tableViewerColumn = new TableViewerColumn(tableViewer, SWT.NONE);
-        TableColumn tblclmnNewColumn = tableViewerColumn.getColumn();
-        tcl_composite.setColumnData(tblclmnNewColumn, new ColumnPixelData(150, true, true));
-        tblclmnNewColumn.setText(Messages.BettingScheduleView_level);
-
-        TableViewerColumn tableViewerColumn_1 = new TableViewerColumn(tableViewer, SWT.NONE);
-        TableColumn tblclmnNewColumn_1 = tableViewerColumn_1.getColumn();
-        tcl_composite.setColumnData(tblclmnNewColumn_1, new ColumnPixelData(150, true, true));
-        tblclmnNewColumn_1.setText(Messages.BettingScheduleView_small_blind);
-
-        TableViewerColumn tableViewerColumn_2 = new TableViewerColumn(tableViewer, SWT.NONE);
-        TableColumn tblclmnNewColumn_2 = tableViewerColumn_2.getColumn();
-        tcl_composite.setColumnData(tblclmnNewColumn_2, new ColumnPixelData(150, true, true));
-        tblclmnNewColumn_2.setText(Messages.BettingScheduleView_big_blind);
-
-        TableViewerColumn tableViewerColumn_3 = new TableViewerColumn(tableViewer, SWT.NONE);
-        TableColumn tblclmnNewColumn_3 = tableViewerColumn_3.getColumn();
-        tcl_composite.setColumnData(tblclmnNewColumn_3, new ColumnPixelData(150, true, true));
-        tblclmnNewColumn_3.setText(Messages.BettingScheduleView_duration);
-
-        for (String[] level : schedule) {
-            TableItem tableItem = new TableItem(table, SWT.NONE);
-            tableItem.setText(level);
-        }
-        final TableEditor editor = new TableEditor(table);
-        editor.horizontalAlignment = SWT.LEFT;
-        editor.grabHorizontal = true;
-        editor.minimumWidth = 50;
-        // editing the second column
-        final int EDITABLECOLUMN = 1;
-
-        table.addSelectionListener(new SelectionAdapter() {
+        TableViewerColumn colName = new TableViewerColumn(tableViewer, SWT.NONE);
+        TableColumn column = colName.getColumn();
+        column.setText(Messages.BettingScheduleView_level);
+        column.setAlignment(SWT.RIGHT);
+        column.setWidth(50);
+        colName.setLabelProvider(new ColumnLabelProvider() {
 
             @Override
-            public void widgetSelected(final SelectionEvent e) {
-                // Clean up any previous editor control
-                Control oldEditor = editor.getEditor();
-                if (oldEditor != null) {
-                    oldEditor.dispose();
-                }
-
-                // Identify the selected row
-                TableItem item = (TableItem) e.item;
-                if (item == null) {
-                    return;
-                }
-
-                // The control that will be the editor must be a child of the
-                // Table
-                Text newEditor = new Text(table, SWT.NONE);
-                newEditor.setText(item.getText(EDITABLECOLUMN));
-                newEditor.addModifyListener(new ModifyListener() {
-
-                    @Override
-                    public void modifyText(final ModifyEvent me) {
-                        Text text = (Text) editor.getEditor();
-                        editor.getItem().setText(EDITABLECOLUMN, text.getText());
-                    }
-                });
-                newEditor.selectAll();
-                newEditor.setFocus();
-                editor.setEditor(newEditor, item, EDITABLECOLUMN);
+            public String getText(final Object element) {
+                Level p = (Level) element;
+                return p.getName();
             }
         });
-        // TODO Your code here
+        TableViewerColumn colSmall = new TableViewerColumn(tableViewer, SWT.NONE);
+        TableColumn column2 = colSmall.getColumn();
+        column2.setText(Messages.BettingScheduleView_small_blind);
+        column2.setAlignment(SWT.RIGHT);
+        column2.setWidth(100);
+        colSmall.setLabelProvider(new ColumnLabelProvider() {
+
+            @Override
+            public String getText(final Object element) {
+                Level p = (Level) element;
+                return Integer.toString(p.getSmallBlind());
+            }
+        });
+        TableViewerColumn colBig = new TableViewerColumn(tableViewer, SWT.NONE);
+        TableColumn column3 = colBig.getColumn();
+        column3.setText(Messages.BettingScheduleView_big_blind);
+        column3.setAlignment(SWT.RIGHT);
+        column3.setWidth(100);
+        colBig.setLabelProvider(new ColumnLabelProvider() {
+
+            @Override
+            public String getText(final Object element) {
+                Level p = (Level) element;
+                return Integer.toString(p.getBigBlind());
+            }
+        });
+        TableViewerColumn colAnte = new TableViewerColumn(tableViewer, SWT.NONE);
+        TableColumn column4 = colAnte.getColumn();
+        column4.setText(Messages.BettingScheduleView_ante);
+        column4.setAlignment(SWT.RIGHT);
+        column4.setWidth(100);
+        colAnte.setLabelProvider(new ColumnLabelProvider() {
+
+            @Override
+            public String getText(final Object element) {
+                Level p = (Level) element;
+                return Integer.toString(p.getBigBlind());
+            }
+        });
+        TableViewerColumn colDuration = new TableViewerColumn(tableViewer, SWT.NONE);
+        TableColumn column5 = colDuration.getColumn();
+        column5.setText(Messages.BettingScheduleView_duration);
+        column5.setAlignment(SWT.RIGHT);
+        column5.setWidth(100);
+        colDuration.setLabelProvider(new ColumnLabelProvider() {
+
+            @Override
+            public String getText(final Object element) {
+                Level p = (Level) element;
+                return Integer.toString(p.getBigBlind());
+            }
+        });
+
+        tableViewer.setContentProvider(ArrayContentProvider.getInstance());
+        tableViewer.setInput(levels);
+
     }
 
     @Focus
