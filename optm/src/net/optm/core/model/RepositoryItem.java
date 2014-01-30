@@ -14,22 +14,36 @@
  * limitations under the License.
  *
  */
-package net.optm;
 
-import org.eclipse.osgi.util.NLS;
+package net.optm.core.model;
 
-public class Messages extends NLS {
+/**
+ * @author ksteuern
+ * 
+ */
+public class RepositoryItem {
 
-    private static final String BUNDLE_NAME = "net.optm.messages"; //$NON-NLS-1$
+    protected String name;
 
-    public static String BettingSchedules_0;
+    protected RepositoryItem parent;
 
-    public static String Players_0;
-    static {
-        // initialize resource bundle
-        NLS.initializeMessages(BUNDLE_NAME, Messages.class);
+    public RepositoryItem(final String name) {
+        this.name = name;
     }
 
-    private Messages() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(final String name) {
+        this.name = name;
+    }
+
+    public RepositoryItem getParent() {
+        return parent;
+    }
+
+    public void setParent(final RepositoryItem parent) {
+        this.parent = parent;
     }
 }

@@ -14,10 +14,10 @@
  * limitations under the License.
  *
  */
-package net.optm.view;
+package net.optm.core.view;
 
-import net.optm.model.BettingSchedule;
-import net.optm.model.RepositoryGroup;
+import net.optm.core.model.BettingSchedule;
+import net.optm.core.model.RepositoryGroup;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;

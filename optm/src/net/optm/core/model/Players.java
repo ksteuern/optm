@@ -15,26 +15,17 @@
  *
  */
 
-package net.optm;
+package net.optm.core.model;
 
-import org.eclipse.osgi.util.NLS;
+import net.optm.core.Messages;
 
 /**
  * @author ksteuern
- *
+ * 
  */
-public class Icons extends NLS {
+public class Players extends RepositoryGroup<Player> {
 
-    private static final String BUNDLE_NAME = "net.optm.icons"; //$NON-NLS-1$
-
-    public static String BettingSchedules_1;
-
-    public static String Players_1;
-    static {
-        // initialize resource bundle
-        NLS.initializeMessages(BUNDLE_NAME, Icons.class);
-    }
-
-    private Icons() {
+    public Players() {
+        super(Messages.Players_0);
     }
 }

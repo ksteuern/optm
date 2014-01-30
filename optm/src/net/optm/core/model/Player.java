@@ -15,17 +15,21 @@
  *
  */
 
-package net.optm.model;
+package net.optm.core.model;
 
-import net.optm.Messages;
 
 /**
  * @author ksteuern
  * 
  */
-public class Players extends RepositoryGroup<Player> {
+public class Player extends RepositoryItem {
 
-    public Players() {
-        super(Messages.Players_0);
+    /**
+     * @param name
+     * @param imageFileName
+     */
+    public Player(final String name) {
+        super(name);
     }
+
 }

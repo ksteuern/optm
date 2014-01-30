@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-package net.optm.model;
+package net.optm.core.model;
 
 import java.util.ArrayList;
 import java.util.Collection;

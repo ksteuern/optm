@@ -14,18 +14,17 @@
  * limitations under the License.
  *
  */
-package net.optm.model;
+package net.optm.core.model;
 
-import net.optm.Messages;
 
 /**
  * @author ksteuern
  * 
  */
-public class BettingSchedules extends RepositoryGroup<BettingSchedule> {
+public class BettingSchedule extends RepositoryItem {
 
-    public BettingSchedules() {
-        super(Messages.BettingSchedules_0);
+    public BettingSchedule(final String name) {
+        super(name);
     }
 
 }

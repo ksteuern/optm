@@ -14,16 +14,16 @@
  * limitations under the License.
  *
  */
-package net.optm.view;
+package net.optm.core.view;
 
 import java.net.URL;
 
-import net.optm.Icons;
-import net.optm.model.BettingSchedule;
-import net.optm.model.BettingSchedules;
-import net.optm.model.Player;
-import net.optm.model.Players;
-import net.optm.model.RepositoryItem;
+import net.optm.core.Icons;
+import net.optm.core.model.BettingSchedule;
+import net.optm.core.model.BettingSchedules;
+import net.optm.core.model.Player;
+import net.optm.core.model.Players;
+import net.optm.core.model.RepositoryItem;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;

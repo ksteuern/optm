@@ -14,29 +14,22 @@
  * limitations under the License.
  *
  */
-package net.optm.handler;
+package net.optm.core;
 
-import org.eclipse.e4.core.di.annotations.CanExecute;
-import org.eclipse.e4.core.di.annotations.Execute;
-import org.eclipse.e4.ui.workbench.IWorkbench;
+import org.eclipse.osgi.util.NLS;
 
-/**
- * Handler for exit command. Exits the application.
- * 
- * @author ksteuern
- * 
- */
-public class ExitHandler {
+public class Messages extends NLS {
 
-    @Execute
-    public void execute(final IWorkbench workbench) {
-        System.out.println("called exit command");
-        workbench.close();
+    private static final String BUNDLE_NAME = "net.optm.core.messages"; //$NON-NLS-1$
+
+    public static String BettingSchedules_0;
+
+    public static String Players_0;
+    static {
+        // initialize resource bundle
+        NLS.initializeMessages(BUNDLE_NAME, Messages.class);
     }
 
-    @CanExecute
-    public boolean canExecute() {
-        return true;
+    private Messages() {
     }
-
 }

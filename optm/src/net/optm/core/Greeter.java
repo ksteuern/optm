@@ -15,35 +15,13 @@
  *
  */
 
-package net.optm.model;
+package net.optm.core;
 
 /**
  * @author ksteuern
  * 
  */
-public class RepositoryItem {
+public interface Greeter {
 
-    protected String name;
-
-    protected RepositoryItem parent;
-
-    public RepositoryItem(final String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(final String name) {
-        this.name = name;
-    }
-
-    public RepositoryItem getParent() {
-        return parent;
-    }
-
-    public void setParent(final RepositoryItem parent) {
-        this.parent = parent;
-    }
+    void greet();
 }

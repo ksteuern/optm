@@ -14,22 +14,29 @@
  * limitations under the License.
  *
  */
+package net.optm.core.handler;
 
-package net.optm.model;
-
+import org.eclipse.e4.core.di.annotations.CanExecute;
+import org.eclipse.e4.core.di.annotations.Execute;
+import org.eclipse.e4.ui.workbench.IWorkbench;
 
 /**
+ * Handler for exit command. Exits the application.
+ * 
  * @author ksteuern
  * 
  */
-public class Player extends RepositoryItem {
+public class ExitHandler {
 
-    /**
-     * @param name
-     * @param imageFileName
-     */
-    public Player(final String name) {
-        super(name);
+    @Execute
+    public void execute(final IWorkbench workbench) {
+        System.out.println("called exit command");
+        workbench.close();
+    }
+
+    @CanExecute
+    public boolean canExecute() {
+        return true;
     }
 
 }

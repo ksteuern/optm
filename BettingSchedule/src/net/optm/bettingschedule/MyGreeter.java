@@ -1,6 +1,6 @@
 package net.optm.bettingschedule;
 
-import net.optm.Greeter;
+import net.optm.core.Greeter;
 
 public class MyGreeter implements Greeter {
 

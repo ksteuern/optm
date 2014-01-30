@@ -1,6 +1,6 @@
-package net.optm.handler;
+package net.optm.core.handler;
 
-import net.optm.Greeter;
+import net.optm.core.Greeter;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;

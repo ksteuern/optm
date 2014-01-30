@@ -14,15 +14,15 @@
  * limitations under the License.
  *
  */
-package net.optm.view;
+package net.optm.core.view;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
-import net.optm.model.BettingSchedule;
-import net.optm.model.Player;
-import net.optm.model.Repository;
+import net.optm.core.model.BettingSchedule;
+import net.optm.core.model.Player;
+import net.optm.core.model.Repository;
 
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;

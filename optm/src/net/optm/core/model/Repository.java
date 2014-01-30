@@ -15,7 +15,7 @@
  *
  */
 
-package net.optm.model;
+package net.optm.core.model;
 
 import java.util.ArrayList;
 import java.util.List;

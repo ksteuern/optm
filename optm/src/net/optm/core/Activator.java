@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-package net.optm;
+package net.optm.core;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;

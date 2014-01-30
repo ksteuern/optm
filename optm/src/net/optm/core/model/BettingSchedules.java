@@ -14,14 +14,18 @@
  * limitations under the License.
  *
  */
+package net.optm.core.model;
 
-package net.optm;
+import net.optm.core.Messages;
 
 /**
  * @author ksteuern
  * 
  */
-public interface Greeter {
+public class BettingSchedules extends RepositoryGroup<BettingSchedule> {
 
-    void greet();
+    public BettingSchedules() {
+        super(Messages.BettingSchedules_0);
+    }
+
 }

@@ -19,7 +19,7 @@ package net.optm.bettingschedule.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.optm.model.RepositoryItem;
+import net.optm.core.model.RepositoryItem;
 
 /**
  * @author ksteuern
