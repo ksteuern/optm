@@ -111,6 +111,7 @@ public class BettingScheduleView {
                 return p.getName();
             }
         });
+        colName.setEditingSupport(new LevelEditingSupport(tableViewer));
         TableViewerColumn colSmall = new TableViewerColumn(tableViewer, SWT.NONE);
         TableColumn column2 = colSmall.getColumn();
         column2.setText(Messages.BettingScheduleView_small_blind);
