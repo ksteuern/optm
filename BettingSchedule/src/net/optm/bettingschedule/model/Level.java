@@ -85,4 +85,9 @@ public class Level {
         this.duration = duration;
     }
 
+    @Override
+    public String toString() {
+        return "Level [name=" + name + ", smallBlind=" + smallBlind + ", bigBlind=" + bigBlind + ", ante=" + ante + ", duration=" + duration + "]";
+    }
+
 }
