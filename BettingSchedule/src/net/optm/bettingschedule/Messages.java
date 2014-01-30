@@ -38,6 +38,10 @@ public class Messages extends NLS {
     public static String BettingScheduleView_small_blind;
 
     public static String BettingScheduleView_tltmNewItem_toolTipText;
+
+    public static String LevelEditingSupport_0;
+
+    public static String LevelEditingSupport_1;
     static {
         // initialize resource bundle
         NLS.initializeMessages(BUNDLE_NAME, Messages.class);

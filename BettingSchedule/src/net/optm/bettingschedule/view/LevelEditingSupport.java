@@ -17,6 +17,7 @@
 
 package net.optm.bettingschedule.view;
 
+import net.optm.bettingschedule.Messages;
 import net.optm.bettingschedule.model.Level;
 
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -52,10 +53,10 @@ public class LevelEditingSupport extends EditingSupport {
                     try {
                         Integer valueOf = Integer.valueOf((String) value);
                         if (valueOf.compareTo(Integer.valueOf(0)) <= 0) {
-                            return "Must not be negative";
+                            return Messages.LevelEditingSupport_0;
                         }
                     } catch (NumberFormatException e) {
-                        return "Not a valid integer";
+                        return Messages.LevelEditingSupport_1;
                     }
                 }
                 return null;
@@ -65,20 +66,16 @@ public class LevelEditingSupport extends EditingSupport {
 
             @Override
             public void editorValueChanged(final boolean oldValidState, final boolean newValidState) {
-                System.out.println(oldValidState);
-                System.out.println(newValidState);
-                System.out.println("Changed");
             }
 
             @Override
             public void cancelEditor() {
-                System.out.println("No");
             }
 
             @Override
             public void applyEditorValue() {
                 if (!editor.isValueValid()) {
-                    MessageDialog.openError(viewer.getControl().getShell(), "No did not work", editor.getErrorMessage());
+                    MessageDialog.openError(viewer.getControl().getShell(), "No did not work", editor.getErrorMessage()); //$NON-NLS-1$
                 }
             }
         });
