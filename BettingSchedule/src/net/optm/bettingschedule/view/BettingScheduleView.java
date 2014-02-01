@@ -32,6 +32,9 @@ import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.dnd.DND;
+import org.eclipse.swt.dnd.TextTransfer;
+import org.eclipse.swt.dnd.Transfer;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
 import org.eclipse.swt.layout.FormLayout;
@@ -62,6 +65,9 @@ public class BettingScheduleView {
         levels = new ArrayList<>();
         levels.add(new Level("1", 5, 10, 0, 20)); //$NON-NLS-1$
         levels.add(new Level("2", 10, 20, 0, 20)); //$NON-NLS-1$
+        levels.add(new Level("3", 15, 30, 0, 20)); //$NON-NLS-1$
+        levels.add(new Level("4", 20, 40, 0, 20)); //$NON-NLS-1$
+        levels.add(new Level("5", 25, 50, 0, 20)); //$NON-NLS-1$
 
         parent.setLayout(new FormLayout());
 
@@ -168,6 +174,10 @@ public class BettingScheduleView {
         tableViewer.setContentProvider(ArrayContentProvider.getInstance());
         tableViewer.setInput(levels);
 
+        int operations = DND.DROP_COPY | DND.DROP_MOVE;
+        Transfer[] transferTypes = new Transfer[] {TextTransfer.getInstance()};
+        tableViewer.addDragSupport(operations, transferTypes, new MyDragListener(tableViewer));
+        tableViewer.addDropSupport(operations, transferTypes, new MyDropListener(tableViewer));
     }
 
     @Focus

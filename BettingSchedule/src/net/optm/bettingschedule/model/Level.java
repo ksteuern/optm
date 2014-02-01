@@ -87,7 +87,53 @@ public class Level {
 
     @Override
     public String toString() {
-        return "Level [name=" + name + ", smallBlind=" + smallBlind + ", bigBlind=" + bigBlind + ", ante=" + ante + ", duration=" + duration + "]";
+        return name + "," + smallBlind + "," + bigBlind + "," + ante + "," + duration;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ante;
+        result = prime * result + bigBlind;
+        result = prime * result + duration;
+        result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + smallBlind;
+        return result;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Level other = (Level) obj;
+        if (ante != other.ante) {
+            return false;
+        }
+        if (bigBlind != other.bigBlind) {
+            return false;
+        }
+        if (duration != other.duration) {
+            return false;
+        }
+        if (name == null) {
+            if (other.name != null) {
+                return false;
+            }
+        } else if (!name.equals(other.name)) {
+            return false;
+        }
+        if (smallBlind != other.smallBlind) {
+            return false;
+        }
+        return true;
     }
 
 }
