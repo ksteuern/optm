@@ -47,6 +47,9 @@ public class RepositoryView {
     @Inject
     ESelectionService service;
 
+    // @Inject
+    // IRepositoryService repositoryService;
+
     public RepositoryView() {
     }
 
@@ -86,6 +89,7 @@ public class RepositoryView {
         treeViewer.setInput(getDummyInput());
         Tree tree = treeViewer.getTree();
         menuService.registerContextMenu(tree, "optm.popupmenu.0");
+        // repositoryService.sayHello();
     }
 
     /**

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="net.optm.core.services">
+   <implementation class="net.optm.core.service.RepositoryService"/>
+   <service>
+      <provide interface="net.optm.core.service.IRepositoryService"/>
+   </service>
+</scr:component>

@@ -24,6 +24,7 @@ import javax.inject.Inject;
 
 import net.optm.bettingschedule.Messages;
 import net.optm.bettingschedule.model.Level;
+import net.optm.core.service.IRepositoryService;
 
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.di.Persist;
@@ -54,6 +55,9 @@ public class BettingScheduleView {
     private Table table;
 
     private List<Level> levels;
+
+    @Inject
+    IRepositoryService repositoryService;
 
     @Inject
     public BettingScheduleView() {
@@ -178,6 +182,7 @@ public class BettingScheduleView {
         Transfer[] transferTypes = new Transfer[] {TextTransfer.getInstance()};
         tableViewer.addDragSupport(operations, transferTypes, new MyDragListener(tableViewer));
         tableViewer.addDropSupport(operations, transferTypes, new MyDropListener(tableViewer));
+        repositoryService.sayHello();
     }
 
     @Focus

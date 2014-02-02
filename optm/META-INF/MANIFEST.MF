@@ -23,4 +23,6 @@ Import-Package: javax.annotation;version="1.0.0",
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Export-Package: net.optm.core,
- net.optm.core.model
+ net.optm.core.model,
+ net.optm.core.service
+Service-Component: OSGI-INF/component.xml
