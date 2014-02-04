@@ -2,12 +2,6 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="optm.extension_repository">
-      <client
-            class="net.optm.bettingschedule.MyGreeter">
-      </client>
-   </extension>
-   <extension
          id="id1"
          point="org.eclipse.e4.workbench.model">
       <fragment

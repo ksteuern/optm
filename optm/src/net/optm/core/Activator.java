@@ -16,9 +16,6 @@
  */
 package net.optm.core;
 
-import net.optm.core.service.IRepositoryService;
-import net.optm.core.service.RepositoryService;
-
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -40,7 +37,6 @@ public class Activator implements BundleActivator {
     @Override
     public void start(final BundleContext bundleContext) throws Exception {
         Activator.context = bundleContext;
-        context.registerService(IRepositoryService.class, new RepositoryService(), null);
     }
 
     /*

@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-
 package net.optm.core.service;
 
 /**
