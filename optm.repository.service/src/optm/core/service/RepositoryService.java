@@ -28,6 +28,8 @@ import optm.core.view.RepositoryLabelProvider;
  */
 public class RepositoryService implements IRepositoryService {
 
+    private final Repository repository = new Repository();
+
     /*
      * (non-Javadoc)
      * 
@@ -65,11 +67,10 @@ public class RepositoryService implements IRepositoryService {
      */
     @Override
     public Repository getRepository() {
-        Repository repo = new Repository();
-        repo.getBettingSchedules().add(new BettingSchedule("first"));
-        repo.getBettingSchedules().add(new BettingSchedule("second"));
-        repo.getPlayers().add(new Player("heinz"));
-        return repo;
+        repository.getBettingSchedules().add(new BettingSchedule("first"));
+        repository.getBettingSchedules().add(new BettingSchedule("second"));
+        repository.getPlayers().add(new Player("heinz"));
+        return repository;
     }
 
 }

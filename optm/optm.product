@@ -27,12 +27,12 @@
    </vm>
 
    <plugins>
-      <plugin id="BettingSchedule"/>
       <plugin id="com.ibm.icu"/>
       <plugin id="javax.annotation"/>
       <plugin id="javax.inject"/>
       <plugin id="javax.xml"/>
       <plugin id="optm"/>
+      <plugin id="optm.bettingschedule"/>
       <plugin id="optm.repository.service"/>
       <plugin id="org.apache.batik.css"/>
       <plugin id="org.apache.batik.util"/>
@@ -91,6 +91,7 @@
 
    <configurations>
       <plugin id="optm.repository.service" autoStart="true" startLevel="3" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
    </configurations>
 
