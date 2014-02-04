@@ -23,6 +23,7 @@ import javax.inject.Inject;
 import optm.core.model.BettingSchedule;
 import optm.core.model.Player;
 import optm.core.model.Repository;
+import optm.core.service.IRepositoryService;
 
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
@@ -45,7 +46,10 @@ public class RepositoryView {
     private EMenuService menuService;
 
     @Inject
-    ESelectionService service;
+    private ESelectionService service;
+
+    @Inject
+    private IRepositoryService repositoryService;
 
     // @Inject
     // IRepositoryService repositoryService;
@@ -89,7 +93,7 @@ public class RepositoryView {
         treeViewer.setInput(getDummyInput());
         Tree tree = treeViewer.getTree();
         menuService.registerContextMenu(tree, "optm.popupmenu.0");
-        // repositoryService.sayHello();
+        repositoryService.sayHello();
     }
 
     /**
