@@ -5,7 +5,7 @@
       <children xsi:type="advanced:Perspective" xmi:id="_58ztQHoxEeOLc8noYQpn9g" elementId="optm.perspective.tournament" label="%perspective.label.1">
         <children xsi:type="basic:PartSashContainer" xmi:id="_X52-gH1hEeOuH68gE5gN4Q" elementId="optm.partsashcontainer.0" containerData="10000" horizontal="true">
           <children xsi:type="basic:PartStack" xmi:id="_bbxmEH1hEeOuH68gE5gN4Q" elementId="optm.partstack.1" containerData="2000">
-            <children xsi:type="basic:Part" xmi:id="_dNe0QH1hEeOuH68gE5gN4Q" elementId="optm.part.1" contributionURI="bundleclass://optm/net.optm.core.view.RepositoryView" label="%part.label.2">
+            <children xsi:type="basic:Part" xmi:id="_dNe0QH1hEeOuH68gE5gN4Q" elementId="optm.part.1" contributionURI="bundleclass://optm/optm.core.view.RepositoryView" label="%part.label.2">
               <menus xsi:type="menu:PopupMenu" xmi:id="_Q1jFkIFDEeOcC9ncQowqRQ" elementId="optm.popupmenu.0" label=""/>
             </children>
           </children>
@@ -19,15 +19,12 @@
       </children>
       <children xsi:type="menu:Menu" xmi:id="_O0EJgH4jEeOUM9TQ0fFStw" elementId="optm.menu.help" label="%optm.menu.help_label">
         <children xsi:type="menu:HandledMenuItem" xmi:id="_ektWEIQpEeOiCpWehDhczQ" elementId="optm.menu.help.about" label="%optm.menu.help.about_label" command="_dRZQQIIJEeOcaIwZzJ_8uw"/>
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_jz3IgIEpEeOiYd6RMLHa5A" elementId="optm.handledmenuitem.0" label="eval" command="_YJVbEIEpEeOiYd6RMLHa5A"/>
       </children>
     </mainMenu>
   </children>
-  <handlers xmi:id="_a2hpMHyLEeONJtDp24fk8A" elementId="net.optm.handlers.exit" contributionURI="bundleclass://optm/net.optm.core.handler.ExitHandler" command="_4c-aUHrCEeOqndFvd5zY2Q"/>
-  <handlers xmi:id="_SOYfkIEpEeOiYd6RMLHa5A" elementId="optm.handler.0" contributionURI="bundleclass://optm/net.optm.core.handler.EvaluateContributionsHandler" command="_YJVbEIEpEeOiYd6RMLHa5A"/>
-  <handlers xmi:id="_ZmPNIIIJEeOcaIwZzJ_8uw" elementId="optm.handler.1" contributionURI="bundleclass://optm/net.optm.core.handler.AboutHandler" command="_dRZQQIIJEeOcaIwZzJ_8uw"/>
+  <handlers xmi:id="_a2hpMHyLEeONJtDp24fk8A" elementId="net.optm.handlers.exit" contributionURI="bundleclass://optm/optm.core.handler.ExitHandler" command="_4c-aUHrCEeOqndFvd5zY2Q"/>
+  <handlers xmi:id="_ZmPNIIIJEeOcaIwZzJ_8uw" elementId="optm.handler.1" contributionURI="bundleclass://optm/optm.core.handler.AboutHandler" command="_dRZQQIIJEeOcaIwZzJ_8uw"/>
   <commands xmi:id="_4c-aUHrCEeOqndFvd5zY2Q" elementId="org.eclipse.ui.file.exit" commandName="%optm.command.exit_commandname"/>
-  <commands xmi:id="_YJVbEIEpEeOiYd6RMLHa5A" elementId="optm.command.0" commandName="evaluate extensions"/>
   <commands xmi:id="_dRZQQIIJEeOcaIwZzJ_8uw" elementId="optm.command.1" commandName="about"/>
   <addons xmi:id="_kD4HknowEeOLc8noYQpn9g" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_kD4Hk3owEeOLc8noYQpn9g" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>

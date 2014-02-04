@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: optm.bettingschedule;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: net.optm.bettingschedule.Activator
+Bundle-Activator: optm.bettingschedule.Activator
 Bundle-Vendor: %Bundle-Vendor
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: javax.annotation;version="1.1.0",
