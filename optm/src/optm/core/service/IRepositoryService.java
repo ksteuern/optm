@@ -16,6 +16,10 @@
  */
 package optm.core.service;
 
+import optm.core.model.Repository;
+import optm.core.view.RepositoryContentProvider;
+import optm.core.view.RepositoryLabelProvider;
+
 /**
  * @author ksteuern
  * 
@@ -23,4 +27,10 @@ package optm.core.service;
 public interface IRepositoryService {
 
     void sayHello();
+
+    Repository getRepository();
+
+    RepositoryContentProvider getContentProvider();
+
+    RepositoryLabelProvider getLabelProvider();
 }

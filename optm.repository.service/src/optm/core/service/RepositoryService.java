@@ -16,7 +16,11 @@
  */
 package optm.core.service;
 
-import optm.core.service.IRepositoryService;
+import optm.core.model.BettingSchedule;
+import optm.core.model.Player;
+import optm.core.model.Repository;
+import optm.core.view.RepositoryContentProvider;
+import optm.core.view.RepositoryLabelProvider;
 
 /**
  * @author ksteuern
@@ -32,6 +36,40 @@ public class RepositoryService implements IRepositoryService {
     @Override
     public void sayHello() {
         System.out.println("Hallo Welt!");
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see optm.core.service.IRepositoryService#getContentProvider()
+     */
+    @Override
+    public RepositoryContentProvider getContentProvider() {
+        return new RepositoryContentProvider();
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see optm.core.service.IRepositoryService#getLabelProvider()
+     */
+    @Override
+    public RepositoryLabelProvider getLabelProvider() {
+        return new RepositoryLabelProvider();
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see optm.core.service.IRepositoryService#getRepository()
+     */
+    @Override
+    public Repository getRepository() {
+        Repository repo = new Repository();
+        repo.getBettingSchedules().add(new BettingSchedule("first"));
+        repo.getBettingSchedules().add(new BettingSchedule("second"));
+        repo.getPlayers().add(new Player("heinz"));
+        return repo;
     }
 
 }

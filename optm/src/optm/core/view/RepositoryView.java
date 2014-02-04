@@ -22,7 +22,6 @@ import javax.inject.Inject;
 
 import optm.core.model.BettingSchedule;
 import optm.core.model.Player;
-import optm.core.model.Repository;
 import optm.core.service.IRepositoryService;
 
 import org.eclipse.e4.ui.di.Focus;
@@ -88,23 +87,11 @@ public class RepositoryView {
                 service.setSelection(selection.getFirstElement());
             }
         });
-        treeViewer.setContentProvider(new RepositoryContentProvider());
-        treeViewer.setLabelProvider(new RepositoryLabelProvider());
-        treeViewer.setInput(getDummyInput());
+        treeViewer.setContentProvider(repositoryService.getContentProvider());
+        treeViewer.setLabelProvider(repositoryService.getLabelProvider());
+        treeViewer.setInput(repositoryService.getRepository());
         Tree tree = treeViewer.getTree();
         menuService.registerContextMenu(tree, "optm.popupmenu.0");
-        repositoryService.sayHello();
-    }
-
-    /**
-     * @return
-     */
-    private Repository getDummyInput() {
-        Repository repo = new Repository();
-        repo.getBettingSchedules().add(new BettingSchedule("first"));
-        repo.getBettingSchedules().add(new BettingSchedule("second"));
-        repo.getPlayers().add(new Player("heinz"));
-        return repo;
     }
 
     @PreDestroy

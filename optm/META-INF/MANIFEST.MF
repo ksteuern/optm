@@ -24,4 +24,5 @@ Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Export-Package: optm.core,
  optm.core.model,
- optm.core.service
+ optm.core.service,
+ optm.core.view
