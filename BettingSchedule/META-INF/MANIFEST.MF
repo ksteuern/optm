@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
-Bundle-SymbolicName: BettingSchedule;singleton:=true
+Bundle-SymbolicName: optm.bettingschedule;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: net.optm.bettingschedule.Activator
 Bundle-Vendor: %Bundle-Vendor
