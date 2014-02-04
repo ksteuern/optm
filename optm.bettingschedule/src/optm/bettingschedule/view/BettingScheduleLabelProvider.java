@@ -14,13 +14,15 @@
  * limitations under the License.
  *
  */
-package optm.core.view;
+
+package optm.bettingschedule.view;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
-import optm.core.model.RepositoryItem;
+import optm.core.Icons;
+import optm.core.model.BettingSchedule;
+import optm.core.model.BettingSchedules;
+import optm.core.view.RepositoryLabelProvider;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Path;
@@ -30,28 +32,18 @@ import org.eclipse.swt.graphics.Image;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
-public class RepositoryLabelProvider extends LabelProvider {
-
-    private final List<LabelProvider> providers = new ArrayList<>();
-
-    public void addProvider(final LabelProvider labelProvider) {
-        providers.add(labelProvider);
-    }
-
-    @Override
-    public String getText(final Object element) {
-        RepositoryItem component = (RepositoryItem) element;
-        String name = component.getName();
-        return name;
-    }
+/**
+ * @author ksteuern
+ * 
+ */
+public class BettingScheduleLabelProvider extends LabelProvider {
 
     @Override
     public Image getImage(final Object element) {
-        for (LabelProvider labelProvider : providers) {
-            Image image = labelProvider.getImage(element);
-            if (image != null) {
-                return image;
-            }
+        if (element instanceof BettingSchedules) {
+            return getImageFromPlugin(Icons.BettingSchedules_1);
+        } else if (element instanceof BettingSchedule) {
+            return getImageFromPlugin(Icons.BettingSchedules_1);
         }
         return null;
     }

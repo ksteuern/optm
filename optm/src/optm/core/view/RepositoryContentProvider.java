@@ -16,7 +16,6 @@
  */
 package optm.core.view;
 
-import optm.core.model.BettingSchedule;
 import optm.core.model.RepositoryGroup;
 
 import org.eclipse.jface.viewers.ITreeContentProvider;
@@ -73,9 +72,6 @@ public class RepositoryContentProvider implements ITreeContentProvider {
      */
     @Override
     public Object[] getChildren(final Object parentElement) {
-        if (parentElement instanceof BettingSchedule) {
-            return null;
-        }
         return ((RepositoryGroup<?>) parentElement).getChildren().toArray();
     }
 

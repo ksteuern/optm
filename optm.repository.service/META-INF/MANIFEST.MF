@@ -7,3 +7,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Service-Component: OSGI-INF/component.xml
 Require-Bundle: optm;bundle-version="0.0.1"
 Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.jface.viewers

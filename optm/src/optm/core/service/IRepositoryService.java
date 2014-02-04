@@ -20,6 +20,8 @@ import optm.core.model.Repository;
 import optm.core.view.RepositoryContentProvider;
 import optm.core.view.RepositoryLabelProvider;
 
+import org.eclipse.jface.viewers.LabelProvider;
+
 /**
  * @author ksteuern
  * 
@@ -33,4 +35,6 @@ public interface IRepositoryService {
     RepositoryContentProvider getContentProvider();
 
     RepositoryLabelProvider getLabelProvider();
+
+    void addLabelProvider(LabelProvider labelProvider);
 }

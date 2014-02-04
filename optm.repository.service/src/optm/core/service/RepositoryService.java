@@ -22,6 +22,8 @@ import optm.core.model.Repository;
 import optm.core.view.RepositoryContentProvider;
 import optm.core.view.RepositoryLabelProvider;
 
+import org.eclipse.jface.viewers.LabelProvider;
+
 /**
  * @author ksteuern
  * 
@@ -29,6 +31,8 @@ import optm.core.view.RepositoryLabelProvider;
 public class RepositoryService implements IRepositoryService {
 
     private final Repository repository = new Repository();
+
+    private final RepositoryLabelProvider repositoryLabelProvider = new RepositoryLabelProvider();
 
     /*
      * (non-Javadoc)
@@ -57,7 +61,7 @@ public class RepositoryService implements IRepositoryService {
      */
     @Override
     public RepositoryLabelProvider getLabelProvider() {
-        return new RepositoryLabelProvider();
+        return repositoryLabelProvider;
     }
 
     /*
@@ -71,6 +75,18 @@ public class RepositoryService implements IRepositoryService {
         repository.getBettingSchedules().add(new BettingSchedule("second"));
         repository.getPlayers().add(new Player("heinz"));
         return repository;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * optm.core.service.IRepositoryService#addLabelProvider(optm.core.service
+     * .LabelProvider)
+     */
+    @Override
+    public void addLabelProvider(final LabelProvider labelProvider) {
+        repositoryLabelProvider.addProvider(labelProvider);
     }
 
 }
