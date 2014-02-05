@@ -1,7 +1,5 @@
-optm
-====
-
-# Open Poker Tournament Manager
+Open Poker Tournament Manager
+=============================
 
 # Credits
 
