@@ -14,32 +14,27 @@
  * limitations under the License.
  *
  */
-package optm.core.service;
 
-import optm.core.model.Repository;
-import optm.core.model.RepositoryItem;
-import optm.core.view.RepositoryContentProvider;
-import optm.core.view.RepositoryLabelProvider;
+package optm.bettingschedule.service;
 
-import org.eclipse.jface.viewers.LabelProvider;
+import java.util.List;
+
+import optm.bettingschedule.model.BettingSchedule;
 
 /**
  * @author ksteuern
  * 
  */
-public interface IRepositoryService {
+public interface IBettingScheduleService {
 
-    Repository getRepository();
+    /**
+     * @return all BettingSchedules
+     */
+    List<BettingSchedule> getBettingSchedules();
 
-    RepositoryContentProvider getContentProvider();
+    BettingSchedule getBettingSchedule(String name);
 
-    RepositoryLabelProvider getLabelProvider();
+    void addBettingSchedule(BettingSchedule bettingSchedule);
 
-    void addLabelProvider(LabelProvider labelProvider);
-
-    void addItem(RepositoryItem item);
-
-    void addToGroup(String name, RepositoryItem item);
-
-    RepositoryItem getItem(String name);
+    void deleteBettingSchedule(String name);
 }

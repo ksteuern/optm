@@ -33,6 +33,7 @@
       <plugin id="javax.xml"/>
       <plugin id="optm"/>
       <plugin id="optm.bettingschedule"/>
+      <plugin id="optm.bettingschedule.service"/>
       <plugin id="optm.repository.service"/>
       <plugin id="org.apache.batik.css"/>
       <plugin id="org.apache.batik.util"/>
@@ -90,6 +91,7 @@
    </plugins>
 
    <configurations>
+      <plugin id="optm.bettingschedule.service" autoStart="true" startLevel="2" />
       <plugin id="optm.repository.service" autoStart="true" startLevel="3" />
       <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />

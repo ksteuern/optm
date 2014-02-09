@@ -23,9 +23,8 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import optm.bettingschedule.Messages;
-import optm.bettingschedule.model.BettingSchedule;
-import optm.bettingschedule.model.BettingSchedules;
 import optm.bettingschedule.model.Level;
+import optm.bettingschedule.service.IBettingScheduleService;
 import optm.core.service.IRepositoryService;
 
 import org.eclipse.e4.ui.di.Focus;
@@ -60,6 +59,9 @@ public class BettingScheduleView {
 
     @Inject
     IRepositoryService repositoryService;
+
+    @Inject
+    IBettingScheduleService bettingScheduleService;
 
     @Inject
     public BettingScheduleView() {
@@ -185,17 +187,6 @@ public class BettingScheduleView {
         tableViewer.addDragSupport(operations, transferTypes, new MyDragListener(tableViewer));
         tableViewer.addDropSupport(operations, transferTypes, new MyDropListener(tableViewer));
         repositoryService.addLabelProvider(new BettingScheduleLabelProvider());
-        load();
-    }
-
-    /**
-     * 
-     */
-    private void load() {
-        BettingSchedules bettingSchedules = new BettingSchedules();
-        bettingSchedules.add(new BettingSchedule("first"));
-        bettingSchedules.add(new BettingSchedule("second"));
-        repositoryService.addItem(bettingSchedules);
     }
 
     @Focus

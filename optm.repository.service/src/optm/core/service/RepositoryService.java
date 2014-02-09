@@ -16,9 +16,12 @@
  */
 package optm.core.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import optm.core.model.Repository;
+import optm.core.model.RepositoryGroup;
 import optm.core.model.RepositoryItem;
 import optm.core.view.MyEventConstants;
 import optm.core.view.RepositoryContentProvider;
@@ -95,4 +98,42 @@ public class RepositoryService implements IRepositoryService {
         eventBroker.send(MyEventConstants.TOPIC_REPOSITORY_UPDATE, item);
     }
 
+    /**
+     * @param name
+     */
+    private RepositoryItem find(final String name) {
+        List<RepositoryItem> children = repository.getChildren();
+        for (RepositoryItem item : children) {
+            if (item.getName().equals(name)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see optm.core.service.IRepositoryService#getItem(java.lang.String)
+     */
+    @Override
+    public RepositoryItem getItem(final String name) {
+        return find(name);
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see optm.core.service.IRepositoryService#addToGroup(java.lang.String,
+     * optm.core.model.RepositoryItem)
+     */
+    @Override
+    public void addToGroup(final String name, final RepositoryItem item) {
+        RepositoryItem find = find(name);
+        if (find instanceof RepositoryGroup<?>) {
+            @SuppressWarnings("unchecked")
+            RepositoryGroup<RepositoryItem> new_name = (RepositoryGroup<RepositoryItem>) find;
+            new_name.add(item);
+        }
+    }
 }

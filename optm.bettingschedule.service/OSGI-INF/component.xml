@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="optm.bettingschedule.service">
+   <implementation class="optm.bettingschedule.service.impl.BettingScheduleService"/>
+   <service>
+      <provide interface="optm.bettingschedule.service.IBettingScheduleService"/>
+   </service>
+</scr:component>
