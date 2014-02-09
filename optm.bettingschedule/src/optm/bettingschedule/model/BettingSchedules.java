@@ -14,9 +14,10 @@
  * limitations under the License.
  *
  */
-package optm.core.model;
+package optm.bettingschedule.model;
 
 import optm.core.Messages;
+import optm.core.model.RepositoryGroup;
 
 /**
  * @author ksteuern

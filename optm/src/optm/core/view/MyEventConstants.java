@@ -14,17 +14,15 @@
  * limitations under the License.
  *
  */
-package optm.core.model;
 
+package optm.core.view;
 
 /**
  * @author ksteuern
  * 
  */
-public class BettingSchedule extends RepositoryItem {
+public interface MyEventConstants {
 
-    public BettingSchedule(final String name) {
-        super(name);
-    }
+    String TOPIC_REPOSITORY_UPDATE = "REPOSITORY/UPDATE";
 
 }

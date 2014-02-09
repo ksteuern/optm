@@ -16,24 +16,21 @@
  */
 package optm.core.view;
 
-import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
-import optm.core.Icons;
-import optm.core.model.BettingSchedule;
-import optm.core.model.BettingSchedules;
-import optm.core.model.Player;
-import optm.core.model.Players;
 import optm.core.model.RepositoryItem;
 
-import org.eclipse.core.runtime.FileLocator;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
-import org.osgi.framework.Bundle;
-import org.osgi.framework.FrameworkUtil;
 
 public class RepositoryLabelProvider extends LabelProvider {
+
+    private final List<LabelProvider> providers = new ArrayList<>();
+
+    public void addProvider(final LabelProvider labelProvider) {
+        providers.add(labelProvider);
+    }
 
     @Override
     public String getText(final Object element) {
@@ -44,23 +41,13 @@ public class RepositoryLabelProvider extends LabelProvider {
 
     @Override
     public Image getImage(final Object element) {
-        if (element instanceof BettingSchedules) {
-            return getImageFromPlugin(Icons.BettingSchedules_1);
-        } else if (element instanceof BettingSchedule) {
-            return getImageFromPlugin(Icons.BettingSchedules_1);
-        } else if (element instanceof Players) {
-            return getImageFromPlugin(Icons.Players_1);
-        } else if (element instanceof Player) {
-            return getImageFromPlugin(Icons.Players_1);
+        for (LabelProvider labelProvider : providers) {
+            Image image = labelProvider.getImage(element);
+            if (image != null) {
+                return image;
+            }
         }
         return null;
     }
 
-    // Helper Method to load the images
-    private Image getImageFromPlugin(final String file) {
-        Bundle bundle = FrameworkUtil.getBundle(RepositoryLabelProvider.class);
-        URL url = FileLocator.find(bundle, new Path("icons/" + file), null);
-        ImageDescriptor image = ImageDescriptor.createFromURL(url);
-        return image.createImage();
-    }
 }

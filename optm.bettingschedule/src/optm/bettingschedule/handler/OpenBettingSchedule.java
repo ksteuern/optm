@@ -2,7 +2,7 @@ package optm.bettingschedule.handler;
 
 import javax.inject.Named;
 
-import optm.core.model.BettingSchedule;
+import optm.bettingschedule.model.BettingSchedule;
 
 import org.eclipse.e4.core.di.annotations.CanExecute;
 import org.eclipse.e4.core.di.annotations.Execute;

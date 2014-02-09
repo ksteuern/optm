@@ -17,51 +17,17 @@
 
 package optm.core.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @author ksteuern
  * 
  */
 public class Repository extends RepositoryGroup<RepositoryItem> {
 
-    private BettingSchedules bettingSchedules;
-
-    private Players players;
-
-    public Repository() {
-        super("Repository");
-        bettingSchedules = new BettingSchedules();
-        players = new Players();
-    }
-
-    public BettingSchedules getBettingSchedules() {
-        return bettingSchedules;
-    }
-
-    public void setBettingSchedules(final BettingSchedules bettingSchedules) {
-        this.bettingSchedules = bettingSchedules;
-    }
-
-    public Players getPlayers() {
-        return players;
-    }
-
-    public void setPlayers(final Players players) {
-        this.players = players;
-    }
-
-    /*
-     * (non-Javadoc)
-     * 
-     * @see net.optm.model.RepositoryGroup#getChildren()
+    /**
+     * @param name
      */
-    @Override
-    public List<RepositoryItem> getChildren() {
-        List<RepositoryItem> children = new ArrayList<>();
-        children.add(getBettingSchedules());
-        children.add(getPlayers());
-        return children;
+    public Repository(final String name) {
+        super(name);
     }
+
 }
