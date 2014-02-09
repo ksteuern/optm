@@ -10,6 +10,15 @@
    </extension>
    <extension
          point="org.eclipse.core.expressions.definitions">
+      <definition
+            id="optm.bettingschedule.definition1">
+         <with
+               variable="org.eclipse.ui.selection">
+            <instanceof
+                  value="optm.bettingschedule.model.BettingSchedule">
+            </instanceof>
+         </with>
+      </definition>
    </extension>
 
 </plugin>
