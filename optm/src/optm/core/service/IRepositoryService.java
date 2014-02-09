@@ -17,6 +17,7 @@
 package optm.core.service;
 
 import optm.core.model.Repository;
+import optm.core.model.RepositoryItem;
 import optm.core.view.RepositoryContentProvider;
 import optm.core.view.RepositoryLabelProvider;
 
@@ -28,8 +29,6 @@ import org.eclipse.jface.viewers.LabelProvider;
  */
 public interface IRepositoryService {
 
-    void sayHello();
-
     Repository getRepository();
 
     RepositoryContentProvider getContentProvider();
@@ -37,4 +36,6 @@ public interface IRepositoryService {
     RepositoryLabelProvider getLabelProvider();
 
     void addLabelProvider(LabelProvider labelProvider);
+
+    void addItem(RepositoryItem item);
 }

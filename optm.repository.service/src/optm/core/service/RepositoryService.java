@@ -16,12 +16,15 @@
  */
 package optm.core.service;
 
-import optm.core.model.BettingSchedule;
-import optm.core.model.Player;
+import javax.inject.Inject;
+
 import optm.core.model.Repository;
+import optm.core.model.RepositoryItem;
+import optm.core.view.MyEventConstants;
 import optm.core.view.RepositoryContentProvider;
 import optm.core.view.RepositoryLabelProvider;
 
+import org.eclipse.e4.core.services.events.IEventBroker;
 import org.eclipse.jface.viewers.LabelProvider;
 
 /**
@@ -30,19 +33,12 @@ import org.eclipse.jface.viewers.LabelProvider;
  */
 public class RepositoryService implements IRepositoryService {
 
-    private final Repository repository = new Repository();
+    private final Repository repository = new Repository(null);
 
     private final RepositoryLabelProvider repositoryLabelProvider = new RepositoryLabelProvider();
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see optm.core.service.IRepositoryService#sayHello()
-     */
-    @Override
-    public void sayHello() {
-        System.out.println("Hallo Welt!");
-    }
+    @Inject
+    IEventBroker eventBroker;
 
     /*
      * (non-Javadoc)
@@ -71,9 +67,6 @@ public class RepositoryService implements IRepositoryService {
      */
     @Override
     public Repository getRepository() {
-        repository.getBettingSchedules().add(new BettingSchedule("first"));
-        repository.getBettingSchedules().add(new BettingSchedule("second"));
-        repository.getPlayers().add(new Player("heinz"));
         return repository;
     }
 
@@ -87,6 +80,19 @@ public class RepositoryService implements IRepositoryService {
     @Override
     public void addLabelProvider(final LabelProvider labelProvider) {
         repositoryLabelProvider.addProvider(labelProvider);
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * optm.core.service.IRepositoryService#addItem(optm.core.model.RepositoryItem
+     * )
+     */
+    @Override
+    public void addItem(final RepositoryItem item) {
+        repository.add(item);
+        eventBroker.send(MyEventConstants.TOPIC_REPOSITORY_UPDATE, "hallo");
     }
 
 }

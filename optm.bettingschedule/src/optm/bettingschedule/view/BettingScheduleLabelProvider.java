@@ -19,9 +19,9 @@ package optm.bettingschedule.view;
 
 import java.net.URL;
 
+import optm.bettingschedule.model.BettingSchedule;
+import optm.bettingschedule.model.BettingSchedules;
 import optm.core.Icons;
-import optm.core.model.BettingSchedule;
-import optm.core.model.BettingSchedules;
 import optm.core.view.RepositoryLabelProvider;
 
 import org.eclipse.core.runtime.FileLocator;

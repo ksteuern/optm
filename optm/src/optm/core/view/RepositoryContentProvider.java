@@ -47,8 +47,6 @@ public class RepositoryContentProvider implements ITreeContentProvider {
      */
     @Override
     public void inputChanged(final Viewer viewer, final Object oldInput, final Object newInput) {
-        // TODO Auto-generated method stub
-
     }
 
     /*

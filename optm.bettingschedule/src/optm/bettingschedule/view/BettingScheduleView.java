@@ -23,6 +23,8 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import optm.bettingschedule.Messages;
+import optm.bettingschedule.model.BettingSchedule;
+import optm.bettingschedule.model.BettingSchedules;
 import optm.bettingschedule.model.Level;
 import optm.core.service.IRepositoryService;
 
@@ -99,6 +101,10 @@ public class BettingScheduleView {
                 System.out.println("add new level"); //$NON-NLS-1$
                 levels.add(new Level(Integer.toString(levels.size() + 1), 0, 0, 0, 0));
                 tableViewer.refresh(true, true);
+                BettingSchedules bettingSchedules = new BettingSchedules();
+                bettingSchedules.add(new BettingSchedule("first"));
+                bettingSchedules.add(new BettingSchedule("second"));
+                repositoryService.addItem(bettingSchedules);
             }
         });
         GridData gd_table = new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1);
@@ -182,7 +188,8 @@ public class BettingScheduleView {
         Transfer[] transferTypes = new Transfer[] {TextTransfer.getInstance()};
         tableViewer.addDragSupport(operations, transferTypes, new MyDragListener(tableViewer));
         tableViewer.addDropSupport(operations, transferTypes, new MyDropListener(tableViewer));
-        repositoryService.sayHello();
+        repositoryService.addLabelProvider(new BettingScheduleLabelProvider());
+
     }
 
     @Focus

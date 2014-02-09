@@ -20,11 +20,11 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
-import optm.core.model.BettingSchedule;
-import optm.core.model.Player;
 import optm.core.service.IRepositoryService;
 
+import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.di.UIEventTopic;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.e4.ui.workbench.swt.modeling.EMenuService;
 import org.eclipse.jface.layout.TreeColumnLayout;
@@ -50,8 +50,7 @@ public class RepositoryView {
     @Inject
     private IRepositoryService repositoryService;
 
-    // @Inject
-    // IRepositoryService repositoryService;
+    private TreeViewer treeViewer;
 
     public RepositoryView() {
     }
@@ -65,18 +64,20 @@ public class RepositoryView {
         Composite composite = new Composite(parent, SWT.NONE);
         composite.setLayout(new TreeColumnLayout());
 
-        final TreeViewer treeViewer = new TreeViewer(composite, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
+        treeViewer = new TreeViewer(composite, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL);
         treeViewer.addDoubleClickListener(new IDoubleClickListener() {
 
             @Override
             public void doubleClick(final DoubleClickEvent event) {
                 IStructuredSelection thisSelection = (IStructuredSelection) event.getSelection();
                 Object selectedNode = thisSelection.getFirstElement();
-                if (selectedNode instanceof BettingSchedule) {
-                    System.out.println("BettingSchedule: " + ((BettingSchedule) selectedNode).getName());
-                } else if (selectedNode instanceof Player) {
-                    System.out.println("Player: " + ((Player) selectedNode).getName());
-                }
+                // if (selectedNode instanceof BettingSchedule) {
+                // System.out.println("BettingSchedule: " + ((BettingSchedule)
+                // selectedNode).getName());
+                // } else if (selectedNode instanceof Player) {
+                // System.out.println("Player: " + ((Player)
+                // selectedNode).getName());
+                // }
             }
         });
         treeViewer.addSelectionChangedListener(new ISelectionChangedListener() {
@@ -92,6 +93,15 @@ public class RepositoryView {
         treeViewer.setInput(repositoryService.getRepository());
         Tree tree = treeViewer.getTree();
         menuService.registerContextMenu(tree, "optm.popupmenu.0");
+    }
+
+    @Inject
+    @Optional
+    private void getNotified(@UIEventTopic(MyEventConstants.TOPIC_REPOSITORY_UPDATE) final String s) {
+        System.out.println(s);
+        if (treeViewer != null) {
+            treeViewer.setInput(repositoryService.getRepository());
+        }
     }
 
     @PreDestroy

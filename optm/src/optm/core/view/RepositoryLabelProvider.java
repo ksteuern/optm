@@ -16,19 +16,13 @@
  */
 package optm.core.view;
 
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 import optm.core.model.RepositoryItem;
 
-import org.eclipse.core.runtime.FileLocator;
-import org.eclipse.core.runtime.Path;
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.viewers.LabelProvider;
 import org.eclipse.swt.graphics.Image;
-import org.osgi.framework.Bundle;
-import org.osgi.framework.FrameworkUtil;
 
 public class RepositoryLabelProvider extends LabelProvider {
 
@@ -56,11 +50,4 @@ public class RepositoryLabelProvider extends LabelProvider {
         return null;
     }
 
-    // Helper Method to load the images
-    private Image getImageFromPlugin(final String file) {
-        Bundle bundle = FrameworkUtil.getBundle(RepositoryLabelProvider.class);
-        URL url = FileLocator.find(bundle, new Path("icons/" + file), null);
-        ImageDescriptor image = ImageDescriptor.createFromURL(url);
-        return image.createImage();
-    }
 }
