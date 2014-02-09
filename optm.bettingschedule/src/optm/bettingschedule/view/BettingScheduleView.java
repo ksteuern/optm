@@ -101,10 +101,6 @@ public class BettingScheduleView {
                 System.out.println("add new level"); //$NON-NLS-1$
                 levels.add(new Level(Integer.toString(levels.size() + 1), 0, 0, 0, 0));
                 tableViewer.refresh(true, true);
-                BettingSchedules bettingSchedules = new BettingSchedules();
-                bettingSchedules.add(new BettingSchedule("first"));
-                bettingSchedules.add(new BettingSchedule("second"));
-                repositoryService.addItem(bettingSchedules);
             }
         });
         GridData gd_table = new GridData(SWT.FILL, SWT.CENTER, false, false, 1, 1);
@@ -189,7 +185,17 @@ public class BettingScheduleView {
         tableViewer.addDragSupport(operations, transferTypes, new MyDragListener(tableViewer));
         tableViewer.addDropSupport(operations, transferTypes, new MyDropListener(tableViewer));
         repositoryService.addLabelProvider(new BettingScheduleLabelProvider());
+        load();
+    }
 
+    /**
+     * 
+     */
+    private void load() {
+        BettingSchedules bettingSchedules = new BettingSchedules();
+        bettingSchedules.add(new BettingSchedule("first"));
+        bettingSchedules.add(new BettingSchedule("second"));
+        repositoryService.addItem(bettingSchedules);
     }
 
     @Focus

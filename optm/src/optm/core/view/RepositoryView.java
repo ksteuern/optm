@@ -20,6 +20,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
+import optm.core.model.RepositoryItem;
 import optm.core.service.IRepositoryService;
 
 import org.eclipse.e4.core.di.annotations.Optional;
@@ -97,8 +98,8 @@ public class RepositoryView {
 
     @Inject
     @Optional
-    private void getNotified(@UIEventTopic(MyEventConstants.TOPIC_REPOSITORY_UPDATE) final String s) {
-        System.out.println(s);
+    private void getNotified(@UIEventTopic(MyEventConstants.TOPIC_REPOSITORY_UPDATE) final RepositoryItem item) {
+        System.out.println(item);
         if (treeViewer != null) {
             treeViewer.setInput(repositoryService.getRepository());
         }

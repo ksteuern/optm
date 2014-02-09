@@ -92,7 +92,7 @@ public class RepositoryService implements IRepositoryService {
     @Override
     public void addItem(final RepositoryItem item) {
         repository.add(item);
-        eventBroker.send(MyEventConstants.TOPIC_REPOSITORY_UPDATE, "hallo");
+        eventBroker.send(MyEventConstants.TOPIC_REPOSITORY_UPDATE, item);
     }
 
 }
